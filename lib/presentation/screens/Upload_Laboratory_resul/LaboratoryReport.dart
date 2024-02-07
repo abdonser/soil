@@ -1,17 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/app_color.dart';
 
-class Report extends StatelessWidget {
-  const Report({Key? key}) : super(key: key);
+class LaboratoryReport extends StatelessWidget {
+  const LaboratoryReport({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.arrow_back_ios_new_rounded),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios_new_rounded,size: 30,),
         ),
         title: const Text(
           "Report",
@@ -55,9 +58,9 @@ class Report extends StatelessWidget {
               columns: const[
                 DataColumn(
                     label: Text(
-                  'Crops',
-                  style: TextStyle(color: Colors.white),
-                )),
+                      'Crops',
+                      style: TextStyle(color: Colors.white),
+                    )),
                 DataColumn(
                   label: Text('N', style: TextStyle(color: Colors.white)),
                 ),

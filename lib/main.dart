@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soil/presentation/screens/Upload_Laboratory_resul/Laboratory_result.dart';
 
 import 'package:soil/presentation/screens/home.dart';
 import 'package:soil/presentation/screens/start_scan/report.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:    const MyHomePage(),
+      home:    const LaboratoryResult(),
     );
   }
 }
