@@ -52,6 +52,7 @@ class FinalStartScan extends StatelessWidget {
                 "Start scan",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
+                  fontSize: 20
                 ),
               ),
               const SizedBox(

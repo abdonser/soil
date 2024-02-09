@@ -42,6 +42,7 @@ class ConnectBluetooth extends StatelessWidget {
                 "Connect bluetooth",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
+                  fontSize: 20
                 ),
               ),
               const SizedBox(
@@ -49,7 +50,14 @@ class ConnectBluetooth extends StatelessWidget {
               ),
               const Center(
                 child: Text(
-                  "Please connect bluetooth to  connect it to device and start scan",
+                  "Please connect bluetooth to  connect it to device and start ",
+                  style: TextStyle(fontSize: 14),
+                ),
+              ),
+              const Center(
+                child: Text(
+                  "scan",
+                  style: TextStyle(fontSize: 14),
                 ),
               ),
               const SizedBox(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:soil/app/app_color.dart';
+import 'package:soil/app/app_images.dart';
 
-import 'package:soil/presentation/screens/start_scan/start_scan.dart';
+import 'package:soil/presentation/screens/start_scan/turn_on_the_device.dart';
 
-
+import 'Upload_Laboratory_resul/Laboratory_result.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -28,7 +29,7 @@ class MyHomePage extends StatelessWidget {
                 Text(
                   "SoilScan",
                   style: TextStyle(
-                      color:AppColor.mainColor, fontWeight: FontWeight.bold),
+                      color: AppColor.mainColor, fontWeight: FontWeight.bold),
                 ),
               ],
             )
@@ -46,18 +47,26 @@ class MyHomePage extends StatelessWidget {
         child: GridView(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: 1,
-              crossAxisSpacing:2,
-              mainAxisSpacing: 40,
+              childAspectRatio: 0.8,
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 15,
             ),
             children: [
               Card(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset("assets/images/buyDevice.png"),
+                    Image.asset(AppImage.buyDevice),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     const Text(
                       "buy the device",
-                      style: TextStyle(fontSize: 16),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    const SizedBox(
+                      height: 8,
                     ),
                     Container(
                         decoration: BoxDecoration(
@@ -65,7 +74,10 @@ class MyHomePage extends StatelessWidget {
                             color: AppColor.mainColor),
                         child: IconButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder)=>StartScan()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) => StartScan()));
                             },
                             icon: const Icon(
                               Icons.arrow_forward_outlined,
@@ -76,11 +88,21 @@ class MyHomePage extends StatelessWidget {
               ),
               Card(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/startScan.png"),
-                    Text(
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Text(
                       "start scan",
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
                     ),
                     Container(
                         decoration: BoxDecoration(
@@ -88,7 +110,10 @@ class MyHomePage extends StatelessWidget {
                             color: AppColor.mainColor),
                         child: IconButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder)=>StartScan()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) => StartScan()));
                             },
                             icon: const Icon(
                               Icons.arrow_forward_outlined,
@@ -99,15 +124,39 @@ class MyHomePage extends StatelessWidget {
               ),
               Card(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/upload.png"),
-                    Text("Upload Laboratory result"),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Text(
+                      "Upload ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const Text(
+                      "Laboratory result ",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
-                            color:AppColor.mainColor),
+                            color: AppColor.mainColor),
                         child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) =>
+                                          LaboratoryResult()));
+                            },
                             icon: const Icon(
                               Icons.arrow_forward_outlined,
                               color: Colors.white,
@@ -117,9 +166,24 @@ class MyHomePage extends StatelessWidget {
               ),
               Card(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/npk.png"),
-                    Text("Tack care of your crop"),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Text(
+                      "Tack care of",
+                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+                    ),
+                    const Text(
+                      " your crop",
+                      style: TextStyle(fontWeight: FontWeight.bold,
+                      fontSize: 16),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
@@ -136,9 +200,23 @@ class MyHomePage extends StatelessWidget {
               Card(
                 color: Colors.white,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/quantityCrop.png"),
-                    Text("Quantity crop expected"),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Text(
+                      "Quantity crop",
+                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+                    ),
+                    const Text(
+                      "expected",
+                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
@@ -154,9 +232,23 @@ class MyHomePage extends StatelessWidget {
               ),
               Card(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/npk.png"),
-                    Text("NPK deficiency in crops"),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    const Text(
+                      "NPK deficiency",
+                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+                    ),
+                    const Text(
+                      "in crops",
+                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),

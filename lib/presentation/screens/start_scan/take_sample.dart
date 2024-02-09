@@ -44,6 +44,7 @@ class TakeSample extends StatelessWidget {
                 "Take the sample",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
+                  fontSize: 20
                 ),
               ),
               const SizedBox(
@@ -51,8 +52,13 @@ class TakeSample extends StatelessWidget {
               ),
               const Center(
                   child: Text(
-                "Please take the sample of soil at a distance of 20 to 30 cm, add some of water, then insert the sensor into it",
+                "Please take the sample of soil at a distance of 20 to 30 cm,",
+                    style: TextStyle(fontSize: 14),
               )),
+              const Center(
+                  child: Text(
+                    "add some of water, then insert the sensor into it",
+                  )),
               const SizedBox(
                 height: 24,
               ),

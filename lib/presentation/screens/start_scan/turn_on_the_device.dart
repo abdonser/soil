@@ -39,6 +39,7 @@ class StartScan extends StatelessWidget {
               "Turn on the device",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+                fontSize: 20
               ),
             ),
             const SizedBox(
