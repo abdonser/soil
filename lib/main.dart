@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:soil/presentation/screens/Upload_Laboratory_resul/Laboratory_result.dart';
+import 'package:soil/presentation/screens/help_view/main_help_view_body.dart';
 
 import 'package:soil/presentation/screens/home.dart';
+import 'package:soil/presentation/screens/languages_view/languages_view.dart';
 import 'package:soil/presentation/screens/layout_screen.dart';
+import 'package:soil/presentation/screens/my_profile_view/my_profile.dart';
 import 'package:soil/presentation/screens/start_scan/report.dart';
 import 'package:soil/presentation/screens/start_scan/result_scan.dart';
 
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:    const MyHomePage(),
+      home:    const MyProfile(),
     );
   }
 }

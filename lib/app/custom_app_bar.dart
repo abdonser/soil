@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.text});
+  const CustomAppBar({super.key, required this.text,this.backArrow});
 
   final String text;
+  final IconData? backArrow;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Padding(
+        leading:  Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.0),
           child: Icon(
-            Icons.arrow_back_ios,
+            backArrow,
             size: 24,
           ),
         ),

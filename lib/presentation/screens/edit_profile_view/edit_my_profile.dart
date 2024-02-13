@@ -17,12 +17,15 @@ class EditProfile extends StatelessWidget {
         children: [
           const SizedBox(
             height: 70,
-            child: CustomAppBar(text: "Edit Profile"),
+            child: CustomAppBar(
+              text: "Edit Profile",
+              backArrow: Icons.arrow_back_ios,
+            ),
           ),
           const SizedBox(
             height: 10,
           ),
-          const EditProfilePhoto(),
+          const UpdateProfilePhoto(),
           const SizedBox(
             height: 25,
           ),
@@ -50,9 +53,9 @@ class EditProfile extends StatelessWidget {
                     const SizedBox(
                       height: 16,
                     ),
-                    const CustomButton(text: 'Save',),
-
-
+                    const CustomButton(
+                      text: 'Save',
+                    ),
                   ],
                 ),
               ),

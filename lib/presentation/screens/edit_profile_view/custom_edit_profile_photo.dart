@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../app/app_color.dart';
 
-class EditProfilePhoto extends StatelessWidget {
-  const EditProfilePhoto({super.key});
+class UpdateProfilePhoto extends StatelessWidget {
+  const UpdateProfilePhoto({super.key});
 
   @override
   Widget build(BuildContext context) {
