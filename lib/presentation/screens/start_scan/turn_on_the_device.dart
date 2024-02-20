@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/app_color.dart';
@@ -58,7 +57,7 @@ class StartScan extends StatelessWidget {
                     color: AppColor.mainColor),
                 child: IconButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder)=>ConnectBluetooth()));
+                      Navigator.push(context, MaterialPageRoute(builder: (builder)=>const ConnectBluetooth()));
                     },
                     icon: const Icon(
                       Icons.arrow_forward_outlined,
