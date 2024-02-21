@@ -37,7 +37,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           Icon(Icons.person_outline, size: 30, color: Colors.white),
         ],
         color: Colors.brown,
-        buttonBackgroundColor: Colors.white,
+        buttonBackgroundColor: Colors.brown,
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 600),
