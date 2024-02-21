@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:soil/app/app_color.dart';
 import 'package:soil/app/custom_app_bar.dart';
+import '../languages_view/languages_view.dart';
 import 'custom_profile_listTile.dart';
 
 class MyProfile extends StatelessWidget {
@@ -11,22 +12,22 @@ class MyProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: const Column(
+      child:  Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 70,
             child: CustomAppBar(
               text: "My Profile",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Expanded(
             child: Scaffold(
               body: Column(
                 children: [
-                  ListTile(
+                  const ListTile(
                     horizontalTitleGap: 1,
                     titleTextStyle: TextStyle(
                         fontSize: 22,
@@ -57,31 +58,36 @@ class MyProfile extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 24.0),
                     child: Divider(),
                   ),
-                  CustomProfileListTile(
+                  const CustomProfileListTile(
                     text: 'History of Reports',
                     leadingIcon: Icons.battery_charging_full_outlined,
                     trailingIcon: Icons.arrow_forward_ios,
                   ),
-                  CustomProfileListTile(
+                  const CustomProfileListTile(
                     text: 'Privacy & policy',
                     leadingIcon: Icons.privacy_tip_outlined,
                     trailingIcon: Icons.arrow_forward_ios,
                   ),
-                  CustomProfileListTile(
-                    text: 'Language',
-                    leadingIcon: Icons.language_outlined,
-                    trailingIcon: Icons.arrow_forward_ios,
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (builder)=>Radiobutton()));
+                    },
+                    child: const CustomProfileListTile(
+                      text: 'Language',
+                      leadingIcon: Icons.language_outlined,
+                      trailingIcon: Icons.arrow_forward_ios,
+                    ),
                   ),
-                  CustomProfileListTile(
+                  const CustomProfileListTile(
                     text: 'Help',
                     leadingIcon: Icons.help_outline,
                     trailingIcon: Icons.arrow_forward_ios,
                   ),
-                  CustomProfileListTile(
+                  const CustomProfileListTile(
                     text: 'Share app',
                     leadingIcon: Icons.battery_charging_full_rounded,
                   ),
-                  CustomProfileListTile(
+                  const CustomProfileListTile(
                     text: 'Log out',
                     leadingIcon: Icons.battery_charging_full_rounded,
                   ),

@@ -1,10 +1,12 @@
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:soil/app/app_color.dart';
-import 'package:soil/presentation/screens/profile_screen/myprofile.dart';
+
 
 import 'chat_screen/chat.dart';
 import 'home.dart';
+import 'my_profile_view/my_profile.dart';
 import 'notifications_screen/notifications.dart';
 
 // import 'package:soil_scan/presentation/screens/screen1.dart';
