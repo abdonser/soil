@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:soil/presentation/screens/edit_profile_view/custom_edit_profile_photo.dart';
-import 'package:soil/presentation/screens/help_view/custom_button.dart';
-import 'package:soil/presentation/screens/help_view/custom_text_field.dart';
 
-import '../../../app/custom_app_bar.dart';
+import '../../../../app/custom_app_bar.dart';
+
+import '../help_view/custom_button.dart';
 import '../help_view/custom_phone_number.dart';
+import '../help_view/custom_text_field.dart';
+import 'custom_edit_profile_photo.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({super.key});
