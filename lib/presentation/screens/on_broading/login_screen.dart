@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:soil/presentation/screens/on_broading/sign_up.dart';
 
+import '../layout_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -109,7 +111,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding:
                 const EdgeInsets.symmetric(horizontal: 30, vertical: 4),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>BottomNavBar()));
+                  },
                   child: const Text(
                     "Log in",
                     style: TextStyle(color: Colors.white),

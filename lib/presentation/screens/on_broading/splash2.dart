@@ -39,52 +39,54 @@ class _Splash2ScreenState extends State<Splash2Screen> {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 50, left: 20, right: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              "assets/images/splash2.png",
-              scale: 4,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const CustomText(
-              title: 'NPK Sensor',
-              color: Colors.black,
-              fontWeight: FontWeight.w700,
-              fontSize: 20,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const CustomText(
-                title:
-                    "The application will help you in how to use the sensor \n"
-                    "    to analyze the soil using easy and simple steps."),
-            const SizedBox(
-              height: 50,
-            ),
-            InkWell(
-                onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (builder) => const Splash3Screen()));
-                },
-                child: Container(
-                  width: 100,
-                  height: 45,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff895B2D),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Icon(
-                    Icons.adaptive.arrow_forward,
-                    color: Colors.white,
-                  ),
-                ))
-          ],
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/images/splash2.png",
+                scale: 4,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const CustomText(
+                title: 'NPK Sensor',
+                color: Colors.black,
+                fontWeight: FontWeight.w700,
+                fontSize: 20,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const CustomText(
+                  title:
+                      "The application will help you in how to use the sensor \n"
+                      "    to analyze the soil using easy and simple steps."),
+              const SizedBox(
+                height: 50,
+              ),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) => const Splash3Screen()));
+                  },
+                  child: Container(
+                    width: 100,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff895B2D),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Icon(
+                      Icons.adaptive.arrow_forward,
+                      color: Colors.white,
+                    ),
+                  ))
+            ],
+          ),
         ),
       ),
     );

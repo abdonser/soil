@@ -38,13 +38,16 @@ class _Splash1ScreenState extends State<Splash1Screen> {
         centerTitle: true,
       ),
       body: Column(
+
         children: [
-          Container(
-              margin: const EdgeInsets.only(top: 80),
-              child: Image.asset(
-                "assets/images/splash1png.png",
-                scale: 4,
-              )),
+          Center(
+            child: Container(
+                margin: const EdgeInsets.only(top: 80),
+                child: Image.asset(
+                  "assets/images/splash1png.png",
+                  scale: 4,
+                )),
+          ),
           const SizedBox(
             height: 25,
           ),
