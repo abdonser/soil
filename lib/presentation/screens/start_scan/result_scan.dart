@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:soil/app/app_color.dart';
 import 'package:soil/presentation/screens/start_scan/report.dart';
@@ -10,7 +9,7 @@ class ResultScan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Reslut Scan"),
+        title: const Text("Result Scan"),
         centerTitle: true,
         leading: IconButton(
           onPressed: () {},
