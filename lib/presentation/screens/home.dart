@@ -37,7 +37,7 @@ class MyHomePage extends StatelessWidget {
         ),
         actions: const [
           CircleAvatar(
-            backgroundImage: AssetImage('assets/avatar.jpg'),
+            backgroundImage: AssetImage('assets/images/profile.png'),
           ),
           SizedBox(width: 10),
         ],

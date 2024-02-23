@@ -41,7 +41,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           Icon(
             Icons.home_outlined,
             size: 30,
-            color: AppColor.mainColor,
+            color: Colors.white,
           ),
           Icon(Icons.notifications_outlined, size: 30, color: Colors.white),
           Icon(Icons.chat_outlined, size: 30, color: Colors.white),
@@ -49,8 +49,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ],
         
         color: AppColor.mainColor,
-        buttonBackgroundColor: Colors.white,
-        backgroundColor: Colors.white,
+        buttonBackgroundColor: AppColor.mainColor,
+        backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 500),
         onTap: (index) {
