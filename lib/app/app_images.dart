@@ -11,5 +11,7 @@ class AppImage {
   static String takeSample = "${pathImage}takeSample.png";
   static String trunOnDevice = "${pathImage}trunOnDevice.png";
   static String upload = "${pathImage}upload.png";
+  static String logo = "${pathImage}logo.png";
+
 
 }
