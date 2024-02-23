@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading:  Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Icon(
             backArrow,
             size: 24,
