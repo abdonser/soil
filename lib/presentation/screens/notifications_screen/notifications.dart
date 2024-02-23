@@ -23,19 +23,22 @@ class Notifications extends StatelessWidget {
           ),
         ),],
       ),
-      body: ListView.separated(
-          itemBuilder: (BuildContext, int) {
-            return ListTile(
-              leading: Image.asset("assets/images/remender.png"),
-              title: const Text("Reminder!",style: TextStyle(fontWeight: FontWeight.bold),),
-              subtitle: const Text("It’s time to fertilize your soil "),
-              trailing: const Text("2m"),
-            );
-          },
-          separatorBuilder: (BuildContext, int) {
-            return const Divider();
-          },
-          itemCount: 10),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: ListView.separated(
+            itemBuilder: (BuildContext, int) {
+              return ListTile(
+                leading: Image.asset("assets/images/remender.png"),
+                title: const Text("Reminder!",style: TextStyle(fontWeight: FontWeight.bold),),
+                subtitle: const Text("It’s time to fertilize your soil "),
+                trailing: const Text("2min"),
+              );
+            },
+            separatorBuilder: (BuildContext, int) {
+              return const Divider();
+            },
+            itemCount: 10),
+      ),
     floatingActionButton:  FloatingActionButton(
       onPressed: () {
 
