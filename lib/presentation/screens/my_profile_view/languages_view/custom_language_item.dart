@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../app/app_color.dart';
+import '../../../../app/app_color.dart';
+
+
 
 enum SingingCharacter {
   english,

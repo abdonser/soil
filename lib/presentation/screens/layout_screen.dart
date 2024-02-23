@@ -1,10 +1,12 @@
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:soil/app/app_color.dart';
-import 'package:soil/presentation/screens/profile_screen/myprofile.dart';
+
 
 import 'chat_screen/chat.dart';
 import 'home.dart';
+import 'my_profile_view/my_profile.dart';
 import 'notifications_screen/notifications.dart';
 
 // import 'package:soil_scan/presentation/screens/screen1.dart';
@@ -39,14 +41,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
           Icon(
             Icons.home_outlined,
             size: 30,
-            color: AppColor.mainColor,
+            color: Colors.white,
           ),
           Icon(Icons.notifications_outlined, size: 30, color: Colors.white),
           Icon(Icons.chat_outlined, size: 30, color: Colors.white),
           Icon(Icons.person_outline, size: 30, color: Colors.white),
         ],
+        
         color: AppColor.mainColor,
-        buttonBackgroundColor: Colors.white,
+        buttonBackgroundColor: AppColor.mainColor,
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 500),

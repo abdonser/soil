@@ -18,7 +18,7 @@ class CustomProfileListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      visualDensity: const VisualDensity(vertical: -3),
+      visualDensity:  VisualDensity(vertical: -3),
       leading: Icon(
         size: 24,
         leadingIcon,
@@ -26,7 +26,7 @@ class CustomProfileListTile extends StatelessWidget {
       ),
       title: Text(
         text,
-        style: const TextStyle(
+        style:  TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w400,
         ),
