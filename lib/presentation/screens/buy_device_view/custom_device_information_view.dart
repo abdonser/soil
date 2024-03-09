@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../app/app_color.dart';
-import '../help_view/custom_button.dart';
+
+import '../my_profile_view/help_view/custom_button.dart';
 import 'CustomRowImages/imagesName.dart';
 import 'custom_row_devices_images.dart';
 

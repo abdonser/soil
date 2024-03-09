@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:soil/app/custom_app_bar.dart';
 import 'package:soil/presentation/screens/payment_view/CustomRowImages/imagesName.dart';
 import 'package:soil/presentation/screens/payment_view/custom_images_row.dart';
-
-import '../help_view/custom_button.dart';
-import '../help_view/custom_text_field.dart';
+import '../my_profile_view/help_view/custom_button.dart';
+import '../my_profile_view/help_view/custom_text_field.dart';
 import 'checkbox.dart';
 
 class PaymentView extends StatefulWidget {

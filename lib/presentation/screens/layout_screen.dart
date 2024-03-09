@@ -2,8 +2,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:soil/app/app_color.dart';
-
-
 import 'chat_screen/chat.dart';
 import 'home.dart';
 import 'my_profile_view/my_profile.dart';
