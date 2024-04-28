@@ -4,7 +4,7 @@ import '../../../../app/custom_app_bar.dart';
 
 import '../help_view/custom_button.dart';
 import '../help_view/custom_phone_number.dart';
-import '../help_view/custom_text_field.dart';
+import '../../../../app/custom_text_field.dart';
 import 'custom_edit_profile_photo.dart';
 
 class EditProfile extends StatelessWidget {
@@ -36,7 +36,7 @@ class EditProfile extends StatelessWidget {
               child: Scaffold(
                 body: Column(
                   children: [
-                    const CustomTextField(
+                     CustomTextField(
                       hintText: "Full Name",
                       icon: Icon(Icons.person_2_outlined),
                     ),
@@ -47,15 +47,15 @@ class EditProfile extends StatelessWidget {
                     const SizedBox(
                       height: 16,
                     ),
-                    const CustomTextField(
+                     CustomTextField(
                       hintText: "Email",
                       icon: Icon(Icons.email_outlined),
                     ),
                     const SizedBox(
                       height: 16,
                     ),
-                    const CustomButton(
-                      text: 'Save',
+                     CustomButton(
+                      text: 'Save', onTap: () {  },
                     ),
                   ],
                 ),

@@ -5,6 +5,7 @@ import 'package:soil/app/app_images.dart';
 import 'package:soil/presentation/screens/start_scan/turn_on_the_device.dart';
 
 import 'Upload_Laboratory_resul/Laboratory_result.dart';
+import 'buy_device_view/buy_device_body.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -77,7 +78,7 @@ class MyHomePage extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (builder) => StartScan()));
+                                      builder: (builder) => BuyDevice()));
                             },
                             icon: const Icon(
                               Icons.arrow_forward_outlined,

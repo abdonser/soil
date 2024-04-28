@@ -17,7 +17,7 @@ class CustomDeviceInformation extends StatelessWidget {
         vertical: MediaQuery.of(context).size.height * .54,
         horizontal: 24,
       ),
-      child: const Column(
+      child:  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
@@ -46,7 +46,7 @@ class CustomDeviceInformation extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
-          Row(
+           const Row(
             children: [
               CustomDevicesImage(
                 image: DevicesImages.image1,
@@ -68,7 +68,7 @@ class CustomDeviceInformation extends StatelessWidget {
           SizedBox(
             height: 18,
           ),
-          CustomButton(text: "Check out"),
+          CustomButton(text: "Check out", onTap: () {  },),
         ],
       ),
     );

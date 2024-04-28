@@ -1,17 +1,40 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:soil/Data/Reqest/cropDeficiency_info_request.dart';
+import 'package:soil/Data/cubit/cropDeficieny_Info/crop_deficieny_info_cubit.dart';
 
-class CropDeficiency extends StatelessWidget {
-  const CropDeficiency({super.key});
+class CropDeficiency extends StatefulWidget {
+  int id;
+  String name;
+   CropDeficiency({super.key,required this.id,required this.name});
 
   @override
+  State<CropDeficiency> createState() => _CropDeficiencyState();
+}
+
+class _CropDeficiencyState extends State<CropDeficiency> {
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    CropDeficienyInfoCubit.get(context).getCropInfo(id: widget.id);
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return BlocConsumer<CropDeficienyInfoCubit, CropDeficienyInfoState>(
+  listener: (context, state) {
+    // TODO: implement listener
+  },
+  builder: (context, state) {
+    return state is CropDeficienyInfoLoading?CircularProgressIndicator():
+      DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "Tomatoes",
+          title:  Text(
+            widget.name,
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
@@ -51,6 +74,7 @@ class CropDeficiency extends StatelessWidget {
                         Container(
                           height: 200,
                           color: Colors.teal,
+                          //CropDeficienyInfoCubit.get(context).npkdeficiency.nImage.toString()
                           child: Image.asset("assets/images/n.png"),
                         ),
                         const Padding(
@@ -109,5 +133,7 @@ class CropDeficiency extends StatelessWidget {
         ),
       ),
     );
+  },
+);
   }
 }

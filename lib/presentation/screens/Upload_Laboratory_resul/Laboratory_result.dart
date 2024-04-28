@@ -13,7 +13,9 @@ class LaboratoryResult extends StatelessWidget {
         title: const Text("Laboratory result",style: TextStyle(fontWeight: FontWeight.bold),),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+
+          },
           icon: const Icon(Icons.arrow_back_ios_new_rounded,size: 30,),
         ),
       ),

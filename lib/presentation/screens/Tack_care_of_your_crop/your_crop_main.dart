@@ -33,7 +33,7 @@ class YourCropView extends StatelessWidget {
                   const CircleAvatar(
                     backgroundColor: Color(0xffD9D9D9),
                     radius: 150 / 2,
-                    backgroundImage: AssetImage("assets/images/tomatoes.png"),
+                    backgroundImage: AssetImage("assets/images/tomato.png"),
                   ),
                   const SizedBox(
                     width: 16,

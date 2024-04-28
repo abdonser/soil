@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:soil/app/custom_app_bar.dart';
 import 'package:soil/presentation/screens/payment_view/CustomRowImages/imagesName.dart';
 import 'package:soil/presentation/screens/payment_view/custom_images_row.dart';
+
+
+import '../../../app/custom_text_field.dart';
 import '../my_profile_view/help_view/custom_button.dart';
-import '../my_profile_view/help_view/custom_text_field.dart';
 import 'checkbox.dart';
 
 class PaymentView extends StatefulWidget {
@@ -54,13 +56,13 @@ class _PaymentViewState extends State<PaymentView> {
                     const SizedBox(
                       height: 25,
                     ),
-                    const CustomTextField(
+                     CustomTextField(
                       hintText: " Card number",
                     ),
                     const SizedBox(
                       height: 16,
                     ),
-                    const CustomTextField(
+                     CustomTextField(
                       hintText: " Cardholder’s name",
                     ),
                     const SizedBox(
@@ -71,13 +73,13 @@ class _PaymentViewState extends State<PaymentView> {
                       children: [
                         SizedBox(
                           width: MediaQuery.of(context).size.width * .4,
-                          child: const CustomTextField(
+                          child:  CustomTextField(
                             hintText: "Expiry date",
                           ),
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * .4,
-                          child: const CustomTextField(
+                          child:  CustomTextField(
                             hintText: "CVV",
                           ),
                         ),
@@ -88,8 +90,8 @@ class _PaymentViewState extends State<PaymentView> {
                     ),
                     const GetCheckValue(),
                     //Row
-                    const CustomButton(
-                      text: 'Pay now',
+                     CustomButton(
+                      text: 'Pay now', onTap: () {  },
                     ),
                   ],
                 ),

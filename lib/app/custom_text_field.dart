@@ -3,7 +3,7 @@ import 'package:soil/app/app_color.dart';
 
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
+   CustomTextField(
       {super.key,
       required this.hintText,
       this.icon,

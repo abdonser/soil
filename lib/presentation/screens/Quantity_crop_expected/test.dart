@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:soil/presentation/screens/payment_view/payment_view.dart';
 
 class Test extends StatelessWidget {
   const Test({super.key});
@@ -63,6 +64,7 @@ class Test extends StatelessWidget {
           SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (builder)=>PaymentView()));
               // Calculate button logic
             },
             child: Text('Calculate'),

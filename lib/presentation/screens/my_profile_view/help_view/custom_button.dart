@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:soil/app/app_color.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.text});
+
 
   final String text;
+  Function() onTap;
+   CustomButton({super.key, required this.text,  required this.onTap});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +18,13 @@ class CustomButton extends StatelessWidget {
       ),
       height: 56,
       minWidth: MediaQuery.of(context).size.width,
-      onPressed: () {},
+      onPressed: () {
+        onTap;
+      },
       color: AppColor.mainColor,
       child: Text(
         text,
-        style: const TextStyle(
+        style:  TextStyle(
             color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
       ),
     );

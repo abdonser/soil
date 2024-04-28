@@ -6,7 +6,7 @@ import '../../../../app/app_color.dart';
 import 'custom_contact_us_view.dart';
 import 'custom_phone_number.dart';
 import 'custom_button.dart';
-import 'custom_text_field.dart';
+import '../../../../app/custom_text_field.dart';
 
 class HelpContactUsViewBody extends StatefulWidget {
   const HelpContactUsViewBody({super.key});
@@ -57,7 +57,7 @@ class _HelpContactUsViewBodyState extends State<HelpContactUsViewBody>
               padding: const EdgeInsets.all(24),
               child: Column(
                 children: [
-                  const CustomTextField(
+                   CustomTextField(
                     hintText: "Full Name",
                     icon: Icon(Icons.person_2_outlined),
                   ),
@@ -68,7 +68,7 @@ class _HelpContactUsViewBodyState extends State<HelpContactUsViewBody>
                   const SizedBox(
                     height: 16,
                   ),
-                  const CustomTextField(
+                   CustomTextField(
                     hintText: "Email",
                     icon: Icon(
                       Icons.email_outlined,
@@ -79,7 +79,7 @@ class _HelpContactUsViewBodyState extends State<HelpContactUsViewBody>
                   const SizedBox(
                     height: 16,
                   ),
-                  const CustomTextField(
+                   CustomTextField(
                     hintText: "Problem description",
                     maxLine: 4,
                     height: 123,
@@ -87,7 +87,7 @@ class _HelpContactUsViewBodyState extends State<HelpContactUsViewBody>
                   const SizedBox(
                     height: 16,
                   ),
-                  const CustomButton(text: 'Send',),
+                   CustomButton(text: 'Send', onTap: () {  },),
                 ],
               ),
             ),
