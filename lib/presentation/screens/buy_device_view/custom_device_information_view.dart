@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../app/app_color.dart';
 
 import '../my_profile_view/help_view/custom_button.dart';
+import '../payment_view/payment_view.dart';
 import 'CustomRowImages/imagesName.dart';
 import 'custom_row_devices_images.dart';
 
@@ -14,7 +15,6 @@ class CustomDeviceInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: MediaQuery.of(context).size.height * .54,
         horizontal: 24,
       ),
       child:  Column(
@@ -28,7 +28,7 @@ class CustomDeviceInformation extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
               Text(
-                "&100",
+                "\$100",
                 style: TextStyle(
                     color: AppColor.mainColor,
                     fontSize: 24,
@@ -65,11 +65,8 @@ class CustomDeviceInformation extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 18,
-          ),
-          CustomButton(text: "Check out", onTap: () {  },),
-        ],
+
+        ]
       ),
     );
   }

@@ -11,23 +11,23 @@ class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit() : super(SignUpInitial());
 
   static SignUpCubit get(context) => BlocProvider.of(context);
-  SignupModel signupModel=SignupModel();
+  SignupModel signupModel = SignupModel();
 
   signUpRequest({
     required String name,
     required String email,
     required String password,
   }) {
-    SignUpRequest.signUpRequest(name: name,
+    SignUpRequest.signUpRequest(
+        name: name,
         email: email,
         password: password,
-        onSuccess: (res){
-      signupModel=res;
-      emit(SignUpDone());
-        }, onError: (statusCode){
-      emit(SignUpError());
+        onSuccess: (res) {
+          signupModel = res;
+          emit(SignUpDone());
+        },
+        onError: (statusCode) {
+          emit(SignUpError());
         });
-
-
   }
 }
