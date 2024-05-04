@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:soil/app/custom_payment_button.dart';
 import 'package:soil/utils/api_keys.dart';
+import '../Thank_you_view/thank_you_view.dart';
 import '../models/amount_model/amount_model.dart';
 import '../models/amount_model/details.dart';
 import '../models/item_list_model/item.dart';
@@ -59,7 +60,7 @@ void exceutePaypalPayment(BuildContext context,
       note: "Contact us for any questions on your order.",
       onSuccess: (Map params) async {
         log("onSuccess: $params");
-        Navigator.pop(context);
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ThankYouView(),),);
       },
       onError: (error) {
         log("onError: $error");
