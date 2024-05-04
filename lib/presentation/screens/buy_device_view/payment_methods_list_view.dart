@@ -21,9 +21,10 @@ class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
     return SizedBox(
       height: 62,
       child: ListView.builder(
+
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 26.0),
             child: GestureDetector(
               onTap: () {
                 selectedIndex = index;
