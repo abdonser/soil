@@ -11,6 +11,7 @@ import 'package:soil/presentation/screens/crop_deficiency/select_crop.dart';
 
 import 'package:soil/presentation/screens/home.dart';
 import 'package:soil/presentation/screens/layout_screen.dart';
+import 'package:soil/presentation/screens/my_profile_view/edit_profile_view/edit_my_profile.dart';
 import 'package:soil/presentation/screens/on_broading/login_screen.dart';
 import 'package:soil/presentation/screens/on_broading/sign_up.dart';
 import 'package:soil/presentation/screens/payment_view/payment_view.dart';
@@ -20,6 +21,7 @@ import 'package:soil/presentation/screens/start_scan/result_scan.dart';
 
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MultiBlocProvider(
       providers: [
         BlocProvider<CropCubit>(
@@ -53,7 +55,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:    const BuyDevice(),
+      home:    const EditProfile(),
     );
   }
 }
