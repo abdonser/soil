@@ -10,8 +10,7 @@ class CropDeficiencyInfoRequest {
       required Function(Npkdeficiency) onSuccess,
       required Function(int statusCode) onError}) async {
     Map<String, String> headers = {
-      "Authorization":
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjA4MTU5ZDkxOTRlYzJkNWJlN2NhYjFiODA0NzYwM2VkMzNlMjM1NzBlYjBmZjVjNDY4ZDViMmVjZWQ2NWFhZTdmMzMyMjc0YjcyNDEyMzgiLCJpYXQiOjE3MTM5ODMwMjkuMjI2MjExLCJuYmYiOjE3MTM5ODMwMjkuMjI2MjE5LCJleHAiOjE3NDU1MTkwMjkuMjAyNTkxLCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.fDhlgJlPfw7Y5zcseU-SNHUQpHoW9wU9VIBOno4U8Ngq1Qt2OeQgV0JOX3Q0-B2Yk0wjCaAXcZ_lXllXsFoET_vQTCQ4ItpyANZN8kpIThQcw9LHzT_U4Wsb9DMu47VYaY8J0BVvq1hzjw7nEEM1eE83FGE-SE_sCbO6DRzh7sb0oiAn3Hs7V9dBqZhyfh1SsKIrr4EGPudpN3A56jW4bXTR9FT_sKZzQOsxiWCg3AV30ioMpHjw7YOFo5PmfgLFEtpJf-wWgzifFJH4ch6whHO-EQ2KoSss3T8KEeBOpdHg9pn3jMm_2NWDSeWfOt2k6TG398thT2EdRuZ7JUoWkz6ZmA47xzwrIwXd9MPSYlmc9FdGz_euX6yulF3RsgmECU8L6Z1efv3xwPAsOXBT7Y_Q_NsZnLQuva8G7Z17aQhcqL8cAAyz0jXMYT1PEQKDLPpxsCztKRJ17C4pFP11DZrpd3v6BYHAyOzO696sr_YP2D5TQ7QFdKkVYU4NotrI4dBPTCZ9iT0e_pEHA-YbZB9FL5171Ew7vE8UI0S331WVUi1nPofQgjQQp99yBSJUogfBviRm1lSyP-Nwqq6ST-tzGvELVQBPz0DyeW64pCNaCdBR1B89Y7rCOX7kXZeC5QSSm_T_OpPLXqc1QDi43dbW1KDTpH6ir0Y25uGGYFY",
+      "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGNhNzliZjE4MDJkM2VhMTY4NzM5NDk3N2VlNjI5MTkyNmFhYjY2ZTFiYTE2ODBlNDhlNzI0ZWQ1NWIyOTBjOTQ1OTVkOWVlODFjOWY4ZDYiLCJpYXQiOjE3MTQ1ODk2ODEuNDgzMDc1LCJuYmYiOjE3MTQ1ODk2ODEuNDgzMDgsImV4cCI6MTc0NjEyNTY4MS4zNDY0MTYsInN1YiI6IjQiLCJzY29wZXMiOltdfQ.Bnxki37UMymDm82jtwqNS9qinRFVKiC9wLQ82bJ_SL2Qt65AR_aAdnDezqwKXWvS5v0AuCbvZHQw2t2a68q4zqy709UI19FLiu8pN8Skq3ygfuvosSsyX1nrCI-5X8Ph2THWDx-s_FYGkSc9xgiTdWQCVaFREm4CPjeptMgHBjH9njsVUH3ivjFUTnKQN4mBVVK1-MS5D1_fTHSqbmFUH2fX_D6LNBMVAqxb_X0yMrpjbg_muJMZE_SxndFqfWQn6LuBy-UK_cpi8p3blfA4XPKSimHJ5PeuhiON6PgAAV58OLeNmXqoMk2auulPpKMfGsAjNMUtrMTvSADU6OaK1-r-rmYCDf60a4FgUv23ZnwhdIqj_1HVDoKv1i8Vgx_hY3c_moUENVvLolziYzOd1xBhb13IxbW2eXpuks8BfDJgQLiJQzdd9WQLwD5ZqFDXgBa6nmddkgXuVpFeVIljl0y3x7DfPsCvw0mRMR621C7EsdJk1G88pbq7c_u6_OyI_DrhxyWAWFf3Lst_dbEGuSrBz9M_zM3e6ILB5pR3txRhCwwaDgI8JphxVCkkdvojGsFT7gF1hMF1YLJtsqae2hLmpgLrndi9oSpsDbIppkuK0G7MJ5xKy76u4zB0JYHkNRvj_NoeGEGx914ZCbOKDOlS5dAU9wyNnXrpVmwfb_Y",
       "User-Agent": "PostmanRuntime/7.37.3",
       "Accept": "*/*",
       "Accept-Encoding": "gzip, deflate, br",
@@ -35,6 +34,8 @@ class CropDeficiencyInfoRequest {
         onError(response.statusCode);
         print(response.statusCode.toString());
       }
+      log(response.statusCode.toString());
+      log(response.body);
     });
   }
 }

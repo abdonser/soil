@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soil/Data/cubit/login_cubit/login_cubit.dart';
 import 'package:soil/presentation/screens/on_broading/sign_up.dart';
 
+import '../../../app/app_color.dart';
 import '../layout_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -22,6 +24,13 @@ class _LoginScreenState extends State<LoginScreen> {
   String _email = '';
 
   String _password = '';
+
+  @override
+  /* void initState() {
+    LoginCubit.get(context).loginRequest(email: emailController.text, password: passwordController.text);
+    // TODO: implement initState
+    super.initState();
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -170,20 +179,64 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 4),
-                  child: MaterialButton(
-                    onPressed: () {
-                      LoginCubit.get(context).loginRequest(
-                          email: emailController.text,
-                          password: passwordController.text);
-                      if (kDebugMode) {
-                        print("token${LoginCubit.get(context).loginmodel.token}");
+                  child:BlocConsumer<LoginCubit, LoginState>(
+                    listener: (context, state) {
+                      if (state is LoginDone) {
+                        Navigator.push(context, MaterialPageRoute(builder: (builder) => BottomNavBar()));
+                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text('Login successful'),
+                          duration: Duration(seconds: 5),
+                        ));
+                      } else if (state is LoginError) {
+                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text('Please enter valid credentials'),
+                          duration: Duration(seconds: 5),
+                        ));
+                      }
+                      // TODO: Implement other listeners if needed
+                    },
+                    builder: (context, state) {
+                      if (state is LoginLoading) {
+                        // Show a loading indicator while fetching data
+                        return Center(
+                          child: CircularProgressIndicator(
+                            color: AppColor.mainColor,
+                          ),
+                        );
+                      } else {
+                        // Show the login button
+                        return MaterialButton(
+                          onPressed: () {
+                            LoginCubit.get(context).loginRequest(
+                              email: emailController.text,
+                              password: passwordController.text,
+                            );
+
+                          /*  if (LoginCubit.get(context).loginmodel.token != null) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (builder) => BottomNavBar()),
+                              );
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                content: Text('Login successful'),
+                                duration: Duration(seconds: 5),
+                              ));
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                content: Text('Please enter the email and password correctly'),
+                                duration: Duration(seconds: 5),
+                              ));
+                            }*/
+                          },
+                          child: const Text(
+                            'Log in',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        );
                       }
                     },
-                    child: const Text(
-                      "Log in",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
+                  )
+
                 ),
               ),
             ),

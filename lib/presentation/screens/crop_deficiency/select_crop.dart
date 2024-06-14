@@ -14,6 +14,36 @@ class SelectCropQuantity extends StatefulWidget {
 }
 
 class _SelectCropQuantityState extends State<SelectCropQuantity> {
+  final List<Map<String, dynamic>> cropImage = [
+    {
+      'name': 'cheese',
+      'price': 2.2,
+      'image': 'assets/croplist/apple.jpeg',
+      'quantity': 1,
+    },
+    {
+      'name': 'milk',
+      'price': 17,
+      'image': 'assets/croplist/banana.jpeg',
+      'quantity': 2,
+    },
+    {
+      'name': 'pizza',
+      'price': 3.99,
+      'image': 'assets/croplist/cabbage.jpeg',
+      'quantity': 3,
+    },
+    {
+      'image': 'assets/croplist/cauliflower.jpeg',
+    },
+    { 'image': 'assets/croplist/chilli.jpeg',},
+    { 'image': 'assets/croplist/citrus.jpeg',},
+    { 'image': 'assets/croplist/coca.jpeg',},
+    { 'image': 'assets/croplist/coconut.jpeg',},
+    { 'image': 'assets/croplist/field pea.jpeg',},
+    { 'image': 'assets/croplist/cabbage.jpeg',},
+
+  ];
   @override
   void initState() {
     // TODO: implement initState
@@ -70,79 +100,44 @@ class _SelectCropQuantityState extends State<SelectCropQuantity> {
                       height: 30,
                     ),
                     Container(
-                      height: MediaQuery.of(context).size.height / 2 + 180,
+                      height: MediaQuery.of(context).size.height / 2 + 240,
                       width: 300,
                       child: ListView.separated(
                           itemBuilder: (context, int index) {
-                            return Padding(
-                              padding: const EdgeInsets.only(
-                                left: 20,
-                              ),
-                              child: InkWell(
-                                onTap: () {},
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    // color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  height: 50,
-                                  width: 370,
-                                  child: Row(
-                                    children: [
-                                      const Padding(
-                                        padding: EdgeInsets.only(left: 5),
-                                        child: CircleAvatar(
-                                          radius: 20,
-                                          backgroundImage: AssetImage(
-                                              "assets/images/potato.png"),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        CropCubit.get(context)
-                                            .cropList[index]
-                                            .cropName,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 200),
-                                        child: IconButton(
-                                            onPressed: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (builder) =>
-                                                          CropDeficiency(
-                                                            id: CropCubit.get(
-                                                                    context)
-                                                                .cropList[index]
-                                                                .id,
-                                                            name: CropCubit.get(
-                                                                    context)
-                                                                .cropList[index]
-                                                                .cropName,
-                                                          )));
-                                            },
-                                            icon: Icon(Icons.navigate_next)),
-                                      ),
-                                    ],
-                                  ),
+                            return ListTile(
+                                leading: CircleAvatar(
+                                  child:Image.asset(cropImage[index]['image']),
                                 ),
-                              ),
-                            );
+                                title: Text(
+                                  CropCubit.get(context)
+                                      .cropList[index]
+                                      .cropName,
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                trailing: IconButton(
+                                  icon: Icon(Icons.arrow_forward_ios),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (builder) =>
+                                                CropDeficiency(
+                                                  id: CropCubit.get(context)
+                                                      .cropList[index]
+                                                      .id,
+                                                  name: CropCubit.get(context)
+                                                      .cropList[index]
+                                                      .cropName,
+                                                )));
+                                  },
+                                ));
                           },
                           separatorBuilder: (context, int index) {
                             return const SizedBox(
                               height: 20,
                             );
                           },
-                          itemCount: CropCubit.get(context).cropList.length),
+                          itemCount:cropImage.length,)// CropCubit.get(context).cropList.length),
                     )
                   ],
                 );

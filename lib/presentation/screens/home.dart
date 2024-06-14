@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:soil/app/app_color.dart';
 import 'package:soil/app/app_images.dart';
+import 'package:soil/presentation/component/home_Card.dart';
 
 import 'package:soil/presentation/screens/start_scan/turn_on_the_device.dart';
 
-import 'Upload_Laboratory_resul/Laboratory_result.dart';
+
 import 'buy_device_view/buy_device_body.dart';
+import 'crop_deficiency/select_crop.dart';
+import 'enter_npk_value/Laboratory_result.dart';
+import 'enter_npk_value/enter_npk_value.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -53,216 +57,52 @@ class MyHomePage extends StatelessWidget {
               mainAxisSpacing: 15,
             ),
             children: [
-              Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(AppImage.buyDevice),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      "buy the device",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: AppColor.mainColor),
-                        child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (builder) => BuyDevice()));
-                            },
-                            icon: const Icon(
-                              Icons.arrow_forward_outlined,
-                              color: Colors.white,
-                            )))
-                  ],
-                ),
-              ),
-              Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("assets/images/startScan.png"),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      "start scan",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: AppColor.mainColor),
-                        child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (builder) => StartScan()));
-                            },
-                            icon: const Icon(
-                              Icons.arrow_forward_outlined,
-                              color: Colors.white,
-                            )))
-                  ],
-                ),
-              ),
-              Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("assets/images/upload.png"),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      "Upload ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                    const Text(
-                      "Laboratory result ",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: AppColor.mainColor),
-                        child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (builder) =>
-                                          LaboratoryResult()));
-                            },
-                            icon: const Icon(
-                              Icons.arrow_forward_outlined,
-                              color: Colors.white,
-                            )))
-                  ],
-                ),
-              ),
-              Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("assets/images/npk.png"),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      "Tack care of",
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
-                    ),
-                    const Text(
-                      " your crop",
-                      style: TextStyle(fontWeight: FontWeight.bold,
-                      fontSize: 16),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: AppColor.mainColor),
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.arrow_forward_outlined,
-                              color: Colors.white,
-                            )))
-                  ],
-                ),
-              ),
-              Card(
-                color: Colors.white,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("assets/images/quantityCrop.png"),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      "Quantity crop",
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
-                    ),
-                    const Text(
-                      "expected",
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: AppColor.mainColor),
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.arrow_forward_outlined,
-                              color: Colors.white,
-                            )))
-                  ],
-                ),
-              ),
-              Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("assets/images/npk.png"),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Text(
-                      "NPK deficiency",
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
-                    ),
-                    const Text(
-                      "in crops",
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: AppColor.mainColor),
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.arrow_forward_outlined,
-                              color: Colors.white,
-                            )))
-                  ],
-                ),
-              ),
+              HomeCard(
+                  image: AppImage.buyDevice,
+                  text: "buy the device",
+                  color: AppColor.mainColor,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (builder) => BuyDevice()));
+                  }),
+              HomeCard(
+                  image: "assets/images/startScan.png",
+                  text: "start scan",
+                  color: AppColor.mainColor,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (builder) => StartScan()));
+                  }),
+              HomeCard(
+                  image: "assets/images/npk_value_card.jpg",
+                  text: " Enter npk\n    value  ",
+                  color: AppColor.mainColor,
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) => UploadValue()));
+                  }),
+              HomeCard(
+                  image: "assets/images/npk.png",
+                  text: "Tack care of\n your crop",
+                  color: AppColor.mainColor,
+                  onTap: () {}),
+              HomeCard(
+                  image: "assets/images/quantityCrop.png",
+                  text: "Quantity crop\n  expected ",
+                  color: AppColor.mainColor,
+                  onTap: () {}),
+              HomeCard(
+                  image: "assets/images/npk.png",
+                  text: "NPK deficiency\n      in crops",
+                  color: AppColor.mainColor,
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) => SelectCropQuantity()));
+                  }),
             ]),
       ),
     );

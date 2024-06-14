@@ -14,6 +14,12 @@ class CropDeficiency extends StatefulWidget {
 }
 
 class _CropDeficiencyState extends State<CropDeficiency> {
+  final List<Map<String, dynamic>> cropImage = [
+    {'image':'assets/npk_difincy/apple n.jpeg'},
+    {'image':'assets/npk_difincy/apple p.jpeg'},
+    {'image':'assets/npk_difincy/apple k.jpeg'},
+  ];
+  
   @override
   void initState() {
     // TODO: implement initState
@@ -75,7 +81,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                           height: 200,
                           color: Colors.teal,
                           //CropDeficienyInfoCubit.get(context).npkdeficiency.nImage.toString()
-                          child: Image.asset("assets/images/n.png"),
+                          child:Image.asset(cropImage[0]['image']) ,//Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.nImage.toString()),
                         ),
                         const Padding(
                           padding: EdgeInsets.all(17.0),
@@ -95,7 +101,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                       Container(
                         height: 200,
                         color: Colors.teal,
-                        child: Image.asset("assets/images/p_deficiency.png"),
+                        child:Image.asset(cropImage[1]['image']) ,//Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.pImage.toString()),
                       ),
                       const Padding(
                         padding: EdgeInsets.all(17.0),
@@ -114,7 +120,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                       Container(
                         height: 200,
                         color: Colors.teal,
-                        child: Image.asset("assets/images/k_deficiency.png"),
+                        child:Image.asset(cropImage[0]['image']),// Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.kImage.toString()),
                       ),
                       const Padding(
                         padding: EdgeInsets.all(17.0),

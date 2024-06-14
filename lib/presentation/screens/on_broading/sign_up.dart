@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soil/Data/cubit/signup_cubit/sign_up_cubit.dart';
 
+import '../layout_screen.dart';
 import 'login_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -207,18 +209,44 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 4),
-                  child: MaterialButton(
-                    onPressed: () {
-                      SignUpCubit.get(context).signUpRequest(
-                          name: namecontroller.text,
-                          email: emailcontroller.text,
-                          password: passwordcontroller.text);
-                      print("token is: ${SignUpCubit.get(context).signupModel.token}");
+                  child: BlocConsumer<SignUpCubit, SignUpState>(
+                    listener: (context, state) {
+                      if (state is SignUpDone) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => BottomNavBar()));
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          content: Text('signUp  successfully'),
+                          duration: Duration(seconds: 5),
+                        ));
+                      } else if (state is SignUpError) {
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          content: Text(
+                              'please enter the name and email and password correctly'),
+                          duration: Duration(seconds: 5),
+                        ));
+                      }
+                      // TODO: implement listener
                     },
-                    child: const Text(
-                      "Sign up",
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    builder: (context, state) {
+                      return state is SignUpLoading
+                          ? CircularProgressIndicator()
+                          : MaterialButton(
+                              onPressed: () {
+                                SignUpCubit.get(context).signUpRequest(
+                                    name: namecontroller.text,
+                                    email: emailcontroller.text,
+                                    password: passwordcontroller.text);
+                              },
+                              child: const Text(
+                                "Sign up",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            );
+                    },
                   ),
                 ),
               ),

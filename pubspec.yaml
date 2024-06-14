@@ -69,6 +69,8 @@ flutter:
 
     - assets/images/
     - assets/images/
+    - assets/croplist/
+    - assets/npk_difincy/
 
 
 
