@@ -66,7 +66,7 @@ class FinalStartScan extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>const ResultScan()));
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=> ResultScreen()));
                 },
                 child: Container(
                     width: 327,

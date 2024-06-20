@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 import 'package:http/http.dart' as http;
 
 import '../../../domain/model/Signup_model.dart';
@@ -20,7 +19,8 @@ class SignUpRequest {
     };
     String bodyJson = json.encode(body);
     await http
-        .post(Uri.parse("http://10.0.2.2:8000/api/register"), headers: headers, body: bodyJson)
+        .post(Uri.parse("http://10.0.2.2:8000/api/register"),
+            headers: headers, body: bodyJson)
         .then((response) {
       if (response.statusCode == 200) {
         Map<String, dynamic> decoded = {};
@@ -30,13 +30,9 @@ class SignUpRequest {
         print("statusCode is:${response.statusCode}");
         print("sign up done correctly");
         print(signupModel.token);
-      }
-      else{
+      } else {
         onError(response.statusCode);
         print(response.statusCode);
-
-
-
       }
     });
   }

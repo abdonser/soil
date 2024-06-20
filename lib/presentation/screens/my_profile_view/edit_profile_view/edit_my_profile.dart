@@ -36,7 +36,7 @@ class EditProfile extends StatelessWidget {
               child: Scaffold(
                 body: Column(
                   children: [
-                     CustomTextField(
+                    CustomTextField(
                       hintText: "Full Name",
                       icon: Icon(Icons.person_2_outlined),
                     ),
@@ -47,14 +47,14 @@ class EditProfile extends StatelessWidget {
                     const SizedBox(
                       height: 16,
                     ),
-                     CustomTextField(
+                    CustomTextField(
                       hintText: "Email",
                       icon: Icon(Icons.email_outlined),
                     ),
                     const SizedBox(
                       height: 16,
                     ),
-                     CustomButton(
+                    CustomButton(
                       text: 'Save', onTap: () {  },
                     ),
                   ],
