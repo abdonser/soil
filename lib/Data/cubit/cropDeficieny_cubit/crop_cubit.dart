@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:soil/Data/Reqest/CropDeficiency_Request.dart';
+import 'package:soil/Data/Reqest/cropList.dart';
 
 import '../../../domain/model/CropDeficiency.dart';
 

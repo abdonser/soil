@@ -117,10 +117,10 @@ class BuyDevice extends StatelessWidget {
                   );
                 },
                 style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all<Color>(
-                      const Color(0xff895B2D)), // Button background color
-                  minimumSize:
-                      WidgetStateProperty.all<Size>(const Size(500, 50)),
+                 // backgroundColor: WidgetStateProperty.all<Color>(
+                 //     const Color(0xff895B2D)), // Button background color
+                 // minimumSize:
+                  //    WidgetStateProperty.all<Size>(const Size(500, 50)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
