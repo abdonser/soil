@@ -6,11 +6,11 @@ class Train extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body:Column(
         mainAxisAlignment:MainAxisAlignment.center,
         children: [
-        Image.network("http://10.0.2.2:8000/npks/upload/apple.jpeg")
+      //  Image.network("http://10.0.2.2:8000/npks/upload/apple.jpeg")
       ],)
     );
   }

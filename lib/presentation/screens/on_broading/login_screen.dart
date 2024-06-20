@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soil/Data/cubit/login_cubit/login_cubit.dart';
+import 'package:soil/app/cache_service.dart';
 import 'package:soil/presentation/screens/on_broading/sign_up.dart';
 
 import '../../../app/app_color.dart';
@@ -183,6 +184,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     listener: (context, state) {
                       if (state is LoginDone) {
                         Navigator.push(context, MaterialPageRoute(builder: (builder) => BottomNavBar()));
+                        String?token=LoginCubit().loginmodel.token;
+                        CacheService().setUserToken(token:"$token");
                         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                           content: Text('Login successful'),
                           duration: Duration(seconds: 5),

@@ -16,33 +16,35 @@ class SelectCropQuantity extends StatefulWidget {
 class _SelectCropQuantityState extends State<SelectCropQuantity> {
   final List<Map<String, dynamic>> cropImage = [
     {
-      'name': 'cheese',
-      'price': 2.2,
       'image': 'assets/croplist/apple.jpeg',
-      'quantity': 1,
     },
     {
-      'name': 'milk',
-      'price': 17,
       'image': 'assets/croplist/banana.jpeg',
-      'quantity': 2,
     },
     {
-      'name': 'pizza',
-      'price': 3.99,
       'image': 'assets/croplist/cabbage.jpeg',
-      'quantity': 3,
     },
     {
       'image': 'assets/croplist/cauliflower.jpeg',
     },
-    { 'image': 'assets/croplist/chilli.jpeg',},
-    { 'image': 'assets/croplist/citrus.jpeg',},
-    { 'image': 'assets/croplist/coca.jpeg',},
-    { 'image': 'assets/croplist/coconut.jpeg',},
-    { 'image': 'assets/croplist/field pea.jpeg',},
-    { 'image': 'assets/croplist/cabbage.jpeg',},
-
+    {
+      'image': 'assets/croplist/chilli.jpeg',
+    },
+    {
+      'image': 'assets/croplist/citrus.jpeg',
+    },
+    {
+      'image': 'assets/croplist/coca.jpeg',
+    },
+    {
+      'image': 'assets/croplist/coconut.jpeg',
+    },
+    {
+      'image': 'assets/croplist/field pea.jpeg',
+    },
+    {
+      'image': 'assets/croplist/cabbage.jpeg',
+    },
   ];
   @override
   void initState() {
@@ -100,13 +102,13 @@ class _SelectCropQuantityState extends State<SelectCropQuantity> {
                       height: 30,
                     ),
                     Container(
-                      height: MediaQuery.of(context).size.height / 2 + 240,
-                      width: 300,
-                      child: ListView.separated(
+                        height: MediaQuery.of(context).size.height / 2 + 240,
+                        width: 300,
+                        child: ListView.separated(
                           itemBuilder: (context, int index) {
                             return ListTile(
                                 leading: CircleAvatar(
-                                  child:Image.asset(cropImage[index]['image']),
+                                  child: Image.asset(cropImage[index]['image']),
                                 ),
                                 title: Text(
                                   CropCubit.get(context)
@@ -137,8 +139,9 @@ class _SelectCropQuantityState extends State<SelectCropQuantity> {
                               height: 20,
                             );
                           },
-                          itemCount:cropImage.length,)// CropCubit.get(context).cropList.length),
-                    )
+                          itemCount: cropImage.length,
+                        ) // CropCubit.get(context).cropList.length),
+                        )
                   ],
                 );
         },
