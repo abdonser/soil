@@ -7,7 +7,11 @@ import 'package:soil/Data/cubit/cropDeficieny_Info/crop_deficieny_info_cubit.dar
 class CropDeficiency extends StatefulWidget {
   int id;
   String name;
-   CropDeficiency({super.key,required this.id,required this.name});
+  String nImage;
+  String pImage;
+  String kImage ;
+
+   CropDeficiency({super.key,required this.id,required this.name,required this.nImage,required this.pImage,required this.kImage});
 
   @override
   State<CropDeficiency> createState() => _CropDeficiencyState();
@@ -81,7 +85,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                           height: 200,
                           color: Colors.teal,
                           //CropDeficienyInfoCubit.get(context).npkdeficiency.nImage.toString()
-                          child:Image.asset(cropImage[0]['image']) ,//Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.nImage.toString()),
+                          child:Image.asset(widget.nImage) ,//Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.nImage.toString()),
                         ),
                         const Padding(
                           padding: EdgeInsets.all(17.0),
@@ -101,7 +105,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                       Container(
                         height: 200,
                         color: Colors.teal,
-                        child:Image.asset(cropImage[1]['image']) ,//Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.pImage.toString()),
+                        child:Image.asset(widget.pImage) ,//Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.pImage.toString()),
                       ),
                       const Padding(
                         padding: EdgeInsets.all(17.0),
@@ -120,7 +124,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                       Container(
                         height: 200,
                         color: Colors.teal,
-                        child:Image.asset(cropImage[0]['image']),// Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.kImage.toString()),
+                        child:Image.asset(widget.kImage),// Image.network(CropDeficienyInfoCubit.get(context).npkdeficiency.kImage.toString()),
                       ),
                       const Padding(
                         padding: EdgeInsets.all(17.0),

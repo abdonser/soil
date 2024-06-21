@@ -1,92 +1,60 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:soil/Data/cubit/crop_list_cubit.dart';
-import 'package:soil/app/app_color.dart';
+import 'package:soil/presentation/screens/Tack_care_of_your_crop/your_crop_main.dart';
 
+import '../../../app/app_color.dart';
 import '../../../app/custom_text.dart';
-import 'crop_deficiency.dart';
 
-class SelectCropQuantity extends StatefulWidget {
-  const SelectCropQuantity({super.key});
+class SelectCrop extends StatefulWidget {
+  const SelectCrop({super.key});
 
   @override
-  State<SelectCropQuantity> createState() => _SelectCropQuantityState();
+  State<SelectCrop> createState() => _SelectCropState();
 }
 
-class _SelectCropQuantityState extends State<SelectCropQuantity> {
-  final List<Map<String, dynamic>> cropImage = [
-    {
-      'image': 'assets/croplist/apple.jpeg',
-      'n':'assets/npk_difincy/apple n.jpeg',
-      'p':'assets/npk_difincy/apple p.jpeg',
-      'k':'assets/npk_difincy/apple k.jpeg',
-    },
-    {
-      'image': 'assets/croplist/banana.jpeg',
-      'n':'assets/croplist/banana n .jpeg',
-      'p':'assets/croplist/banana p.jpeg',
-      'k':'assets/croplist/banana k.jpeg',
-    },
-    {
-      'image': 'assets/croplist/cabbage.jpeg',
-      'n':'assets/croplist/cabbage-N.jpg',
-      'p':'assets/croplist/cabbage-P.jpg',
-      'k':'assets/croplist/cabbage-K.jpg',
-
-
-    },
-    {
-      'image': 'assets/croplist/cauliflower.jpeg',
-      'n':'assets/croplist/cauliflower-N.jpg',
-      'p':'assets/croplist/cauliflower-P.jpg',
-      'k':'assets/croplist/cauliflower-K.jpg',
-    },
-    {
-      'image': 'assets/croplist/chilli.jpeg',
-      'n':'assets/croplist/chilli-N.jpg',
-      'p':'assets/croplist/cilli-P.jpg',
-      'k':'assets/croplist/cilli-K.jpg',
-    },
-    {
-      'image': 'assets/croplist/citrus.jpeg',
-      'n':'assets/croplist/citrus n.jpeg',
-      'p':'assets/croplist/citrus p .jpeg',
-      'k':'assets/croplist/citrus k.jpeg',
-
-    },
-    {
-      'image': 'assets/croplist/coca.jpeg',
-      'n':'assets/croplist/cocoa-N.jpg',
-      'p':'assets/croplist/cocoa-P.jpg',
-      'k':'assets/croplist/cocoa-K.jpg',
-    },
-    {
-      'image': 'assets/croplist/coconut.jpeg',
-      'n':'assets/croplist/coconut-N.jpg',
-      'p':'assets/croplist/coconut-P.jpg',
-      'k':'assets/croplist/coconut-K.jpg',
-    },
-    {
-      'image': 'assets/croplist/field pea.jpeg',
-      'n':'assets/croplist/field pea n .jpeg',
-      'p':'assets/croplist/field pea p.jpeg',
-      'k':'assets/croplist/field pea k.jpeg',
-    },
-    {
-      'image': 'assets/croplist/cabbage.jpeg',
-      'n':'assets/croplist/field pea n .jpeg',
-      'p':'assets/croplist/field pea p.jpeg',
-      'k':'assets/croplist/field pea k.jpeg',
-    },
-  ];
+class _SelectCropState extends State<SelectCrop> {
   @override
   void initState() {
     // TODO: implement initState
-   CropListCubit.get(context).getCropList();
+    CropListCubit.get(context).getCropList();
     super.initState();
   }
+  final List<Map<String, dynamic>> cropImage = [
+    {
+      'image': 'assets/croplist/apple.jpeg',
+    },
+    {
+      'image': 'assets/croplist/banana.jpeg',
+    },
+    {
+      'image': 'assets/croplist/cabbage.jpeg',
+    },
+    {
+      'image': 'assets/croplist/cauliflower.jpeg',
+    },
+    {
+      'image': 'assets/croplist/chilli.jpeg',
+    },
+    {
+      'image': 'assets/croplist/citrus.jpeg',
+    },
+    {
+      'image': 'assets/croplist/coca.jpeg',
+    },
+    {
+      'image': 'assets/croplist/coconut.jpeg',
+    },
+    {
+      'image': 'assets/croplist/field pea.jpeg',
+    },
+    {
+      'image': 'assets/croplist/cabbage.jpeg',
+    },
+  ];
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -153,18 +121,18 @@ class _SelectCropQuantityState extends State<SelectCropQuantity> {
                                 trailing: IconButton(
                                   icon: Icon(Icons.arrow_forward_ios),
                                   onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (builder) =>
-                                                CropDeficiency(
-                                                  id: CropListCubit.get(context)
-                                                      .cropList[index].cropId
-                                                      ,
-                                                  name: CropListCubit.get(context)
-                                                      .cropList[index]
-                                                      .cropName, nImage:cropImage[index]['n'], pImage:cropImage[index]['p'], kImage:cropImage[index]['k'],
-                                                )));
+                                     Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) =>
+                                          YourCropView(
+                                            id:  CropListCubit.get(context)
+                                                .cropList[index].npkId
+                                                ,
+                                            name:  CropListCubit.get(context)
+                                                .cropList[index]
+                                                .cropName, image:cropImage[index]['image'],
+                                          )));
                                   },
                                 ));
                           },

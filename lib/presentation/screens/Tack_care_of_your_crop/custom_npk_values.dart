@@ -26,13 +26,13 @@ class NpkValues extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 2,
+          height: 5,
         ),
         Text(
           value,
           style: const TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w400,
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
             color: AppColor.mainColor,
           ),
         ),
