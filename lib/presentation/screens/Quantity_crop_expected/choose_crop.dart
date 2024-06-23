@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:soil/presentation/component/listTile_choose_crop.dart';
+import 'package:soil/presentation/screens/Quantity_crop_expected/quantity_crop_maize.dart';
+import 'package:soil/presentation/screens/Quantity_crop_expected/quantity_crop_rice.dart';
+import 'package:soil/presentation/screens/Quantity_crop_expected/quantity_crop_soybean.dart';
+import 'package:soil/presentation/screens/Quantity_crop_expected/quantity_crop_wheat.dart';
 
 import '../../../app/custom_text.dart';
 
@@ -21,8 +25,8 @@ class ChooseCrop extends StatelessWidget {
       'image': 'assets/croplist/soybean.jpeg',
     },
     {
-      'name': "onion",
-      'image': 'assets/croplist/onion.jpeg',
+      'name': "maize",
+      'image': 'assets/croplist/maize.jpeg',
     },
     {
       'name': "chilli",
@@ -93,28 +97,28 @@ class ChooseCrop extends StatelessWidget {
                   CostomListTile(
                       image: cropImage[0]['image'],
                       text: cropImage[0]['name'],
-                      onTap: () {}),
+                      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (builder)=>WheateQuantity()));}),
                   SizedBox(
                     height: 20,
                   ),
                   CostomListTile(
                       image: cropImage[1]['image'],
                       text: cropImage[1]['name'],
-                      onTap: () {}),
+                      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (builder)=>RiceQuantity()));}),
                   SizedBox(
                     height: 20,
                   ),
                   CostomListTile(
                       image: cropImage[2]['image'],
                       text: cropImage[2]['name'],
-                      onTap: () {}),
+                      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (builder)=>SoyBeanQuantity()));}),
                   SizedBox(
                     height: 20,
                   ),
                   CostomListTile(
                       image: cropImage[3]['image'],
                       text: cropImage[3]['name'],
-                      onTap: () {}),
+                      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (builder)=>MaizeQuantity()));}),
                   SizedBox(
                     height: 20,
                   ),

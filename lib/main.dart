@@ -6,6 +6,7 @@ import 'package:soil/Data/cubit/crop_list_cubit.dart';
 import 'package:soil/Data/cubit/login_cubit/login_cubit.dart';
 import 'package:soil/Data/cubit/signup_cubit/sign_up_cubit.dart';
 import 'package:soil/presentation/screens/Quantity_crop_expected/choose_crop.dart';
+import 'package:soil/presentation/screens/Quantity_crop_expected/quantity_crop_rice.dart';
 import 'package:soil/presentation/screens/Tack_care_of_your_crop/cropList.dart';
 import 'package:soil/presentation/screens/Tack_care_of_your_crop/your_crop_main.dart';
 import 'package:soil/presentation/screens/buy_device_view/buy_device_body.dart';
@@ -63,7 +64,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:LogoScreen(),
+      home:ChooseCrop(),
     );
   }
 }
