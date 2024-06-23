@@ -6,9 +6,11 @@ import 'package:soil/presentation/component/home_Card.dart';
 import 'package:soil/presentation/screens/start_scan/turn_on_the_device.dart';
 
 
+import 'Quantity_crop_expected/choose_crop.dart';
+import 'Tack_care_of_your_crop/cropList.dart';
 import 'buy_device_view/buy_device_body.dart';
 import 'crop_deficiency/select_crop.dart';
-import 'enter_npk_value/Laboratory_result.dart';
+
 import 'enter_npk_value/enter_npk_value.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -87,12 +89,16 @@ class MyHomePage extends StatelessWidget {
                   image: "assets/images/npk.png",
                   text: "Tack care of\n your crop",
                   color: AppColor.mainColor,
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>SelectCrop()));
+                  }),
               HomeCard(
                   image: "assets/images/quantityCrop.png",
                   text: "Quantity crop\n  expected ",
                   color: AppColor.mainColor,
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>ChooseCrop()));
+                  }),
               HomeCard(
                   image: "assets/images/npk.png",
                   text: "NPK deficiency\n      in crops",

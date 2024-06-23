@@ -5,6 +5,7 @@ import 'package:soil/Data/cubit/cropDeficieny_Info/crop_deficieny_info_cubit.dar
 import 'package:soil/Data/cubit/crop_list_cubit.dart';
 import 'package:soil/Data/cubit/login_cubit/login_cubit.dart';
 import 'package:soil/Data/cubit/signup_cubit/sign_up_cubit.dart';
+import 'package:soil/presentation/screens/Quantity_crop_expected/choose_crop.dart';
 import 'package:soil/presentation/screens/Tack_care_of_your_crop/cropList.dart';
 import 'package:soil/presentation/screens/Tack_care_of_your_crop/your_crop_main.dart';
 import 'package:soil/presentation/screens/buy_device_view/buy_device_body.dart';
@@ -14,6 +15,7 @@ import 'package:soil/presentation/screens/crop_deficiency/select_crop.dart';
 import 'package:soil/presentation/screens/home.dart';
 import 'package:soil/presentation/screens/layout_screen.dart';
 import 'package:soil/presentation/screens/on_broading/login_screen.dart';
+import 'package:soil/presentation/screens/on_broading/logo_screen.dart';
 import 'package:soil/presentation/screens/on_broading/sign_up.dart';
 import 'package:soil/presentation/screens/start_scan/report.dart';
 import 'package:soil/presentation/screens/start_scan/result_scan.dart';
@@ -61,7 +63,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:SelectCropQuantity(),
+      home:LogoScreen(),
     );
   }
 }

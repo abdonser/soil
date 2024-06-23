@@ -8,26 +8,17 @@ part 'crop_list_state.dart';
 
 class CropListCubit extends Cubit<CropListState> {
   CropListCubit() : super(CropListInitial());
-  static CropListCubit get(context)=>BlocProvider.of(context);
-  List<CropList> cropList=[];
-  getCropList(){
+
+  static CropListCubit get(context) => BlocProvider.of(context);
+  List<CropList> cropList = [];
+
+  getCropList() {
     emit(CropListLoading());
-    CropListRequest.getCropList(onSuccess:(res){
-      cropList=res;
+    CropListRequest.getCropList(onSuccess: (res) {
+      cropList = res;
       emit(CropListDone());
-
-    },
-
-
-
-
-
-
-        onError: (statusCode){
+    }, onError: (statusCode) {
       emit(CropListError());
-        }
-
-
-    );
+    });
   }
 }

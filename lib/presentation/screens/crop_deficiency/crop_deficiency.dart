@@ -18,11 +18,11 @@ class CropDeficiency extends StatefulWidget {
 }
 
 class _CropDeficiencyState extends State<CropDeficiency> {
-  final List<Map<String, dynamic>> cropImage = [
-    {'image':'assets/npk_difincy/apple n.jpeg'},
-    {'image':'assets/npk_difincy/apple p.jpeg'},
-    {'image':'assets/npk_difincy/apple k.jpeg'},
-  ];
+  // final List<Map<String, dynamic>> cropImage = [
+  //   {'image':'assets/npk_difincy/apple n.jpeg'},
+  //   {'image':'assets/npk_difincy/apple p.jpeg'},
+  //   {'image':'assets/npk_difincy/apple k.jpeg'},
+  // ];
   
   @override
   void initState() {
@@ -93,7 +93,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                               "1. Slow growth and overall weakness in the plants.\n"
                                   "2. Yellowing of lower leaves.\n"
                                   "3. Smaller and less dense leaves.\n"
-                                  "4. Reduced fruit productivity, smaller size, and lower quality."),
+                                  "4. Reduced fruit productivity, smaller size, and lower quality.",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16 ),),
                         ),
                       ],
                     ),
@@ -113,7 +113,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                             "1. Slow growth and overall weakness in the plants.\n"
                                 "2. Yellowing of lower leaves.\n"
                                 "3. Smaller and less dense leaves.\n"
-                                "4. Reduced fruit productivity, smaller size, and lower quality."),
+                                "4. Reduced fruit productivity, smaller size, and lower quality.",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16)),
                       ),
                     ],
                   ),
@@ -132,7 +132,7 @@ class _CropDeficiencyState extends State<CropDeficiency> {
                             "1. Slow growth and overall weakness in the plants.\n"
                                 "2. Yellowing of lower leaves.\n"
                                 "3. Smaller and less dense leaves.\n"
-                                "4. Reduced fruit productivity, smaller size, and lower quality."),
+                                "4. Reduced fruit productivity, smaller size, and lower quality.",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16)),
                       ),
                     ],
                   ),

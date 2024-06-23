@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soil/Data/cubit/signup_cubit/sign_up_cubit.dart';
+import 'package:soil/app/cache_service.dart';
 
 import '../layout_screen.dart';
 import 'login_screen.dart';
@@ -216,6 +217,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (builder) => BottomNavBar()));
+                        String?token=SignUpCubit().signupModel.token;
+                        CacheService().setUserToken(token:"$token");
+
                         ScaffoldMessenger.of(context)
                             .showSnackBar(const SnackBar(
                           content: Text('signUp  successfully'),

@@ -68,17 +68,18 @@ class _SelectCropQuantityState extends State<SelectCropQuantity> {
       'k':'assets/croplist/coconut-K.jpg',
     },
     {
+      'image':'assets/croplist/pomegranate.jpeg',
+      'n':'assets/croplist/pomegranate-N.jpg',
+      'p':'assets/croplist/pomegranate-P.jpg',
+      'k':'assets/croplist/pomegranate-K.jpg',
+    },
+    {
       'image': 'assets/croplist/field pea.jpeg',
       'n':'assets/croplist/field pea n .jpeg',
       'p':'assets/croplist/field pea p.jpeg',
       'k':'assets/croplist/field pea k.jpeg',
     },
-    {
-      'image': 'assets/croplist/cabbage.jpeg',
-      'n':'assets/croplist/field pea n .jpeg',
-      'p':'assets/croplist/field pea p.jpeg',
-      'k':'assets/croplist/field pea k.jpeg',
-    },
+
   ];
   @override
   void initState() {
@@ -142,7 +143,7 @@ class _SelectCropQuantityState extends State<SelectCropQuantity> {
                           itemBuilder: (context, int index) {
                             return ListTile(
                                 leading: CircleAvatar(
-                                  child: Image.asset(cropImage[index]['image']),
+                                   child: Image.asset(cropImage[index]['image']),
                                 ),
                                 title: Text(
                                   CropListCubit.get(context)
@@ -173,7 +174,7 @@ class _SelectCropQuantityState extends State<SelectCropQuantity> {
                               height: 20,
                             );
                           },
-                          itemCount: cropImage.length,
+                          itemCount:cropImage.length,
                         ) // CropCubit.get(context).cropList.length),
                         )
                   ],

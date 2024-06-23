@@ -11,7 +11,7 @@ class CropDeficiencyRequest {
       {required Function(List<Npkdeficiency>) onSuccess,
       required Function(int statusCode) onError}) async {
     Map<String, String> headers = {
-      "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGNhNzliZjE4MDJkM2VhMTY4NzM5NDk3N2VlNjI5MTkyNmFhYjY2ZTFiYTE2ODBlNDhlNzI0ZWQ1NWIyOTBjOTQ1OTVkOWVlODFjOWY4ZDYiLCJpYXQiOjE3MTQ1ODk2ODEuNDgzMDc1LCJuYmYiOjE3MTQ1ODk2ODEuNDgzMDgsImV4cCI6MTc0NjEyNTY4MS4zNDY0MTYsInN1YiI6IjQiLCJzY29wZXMiOltdfQ.Bnxki37UMymDm82jtwqNS9qinRFVKiC9wLQ82bJ_SL2Qt65AR_aAdnDezqwKXWvS5v0AuCbvZHQw2t2a68q4zqy709UI19FLiu8pN8Skq3ygfuvosSsyX1nrCI-5X8Ph2THWDx-s_FYGkSc9xgiTdWQCVaFREm4CPjeptMgHBjH9njsVUH3ivjFUTnKQN4mBVVK1-MS5D1_fTHSqbmFUH2fX_D6LNBMVAqxb_X0yMrpjbg_muJMZE_SxndFqfWQn6LuBy-UK_cpi8p3blfA4XPKSimHJ5PeuhiON6PgAAV58OLeNmXqoMk2auulPpKMfGsAjNMUtrMTvSADU6OaK1-r-rmYCDf60a4FgUv23ZnwhdIqj_1HVDoKv1i8Vgx_hY3c_moUENVvLolziYzOd1xBhb13IxbW2eXpuks8BfDJgQLiJQzdd9WQLwD5ZqFDXgBa6nmddkgXuVpFeVIljl0y3x7DfPsCvw0mRMR621C7EsdJk1G88pbq7c_u6_OyI_DrhxyWAWFf3Lst_dbEGuSrBz9M_zM3e6ILB5pR3txRhCwwaDgI8JphxVCkkdvojGsFT7gF1hMF1YLJtsqae2hLmpgLrndi9oSpsDbIppkuK0G7MJ5xKy76u4zB0JYHkNRvj_NoeGEGx914ZCbOKDOlS5dAU9wyNnXrpVmwfb_Y",
+      "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2UzNGFiNzA2NGYwMDUwNWI3MWJlZDZhM2E3Yzc4OGVhNTQ5NTgyZDU5ZmJjM2Y3MTM1ODE3NDJmYWU4ZGQyZTcyYTBlYzY3MTNmMDY2ZTQiLCJpYXQiOjE3MTkwNzgzMjQuNDcxNDc4LCJuYmYiOjE3MTkwNzgzMjQuNDcxNDgzLCJleHAiOjE3NTA2MTQzMjQuMzM1MjU5LCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.rJaHbbRlyNaBD22ogkr-9HkXpgIUMSHfOKcnIkrSXWy0gY83LmGP9USJRs1qjElz-NHptEK_nTlfu0M5PN_r3LKYIKkUSZf2viornD3YOufOqobJEtqGMHrYXvwcs1UTlVsS9-QqHP1YP85xQrCQrY41rB-3hBfxFmkAqmWqEj7WQ6-QIxuOl09BqKT3aIr7rr_uaa9-BsW6_vi8mz2eNE1XsIqTnGq-dRUBjAG5E7ibfQCT3odTkJaQqU3CCbccgSOcrzywVSRA8nZh6xspM32pIA3BbUb1_VTizuVtaghJE4v7X7kAyyTNLEsbhpoYfBhIuDlmykdrkkjhYP7H_Jp6jRWNmLHMJE0uaa0YRGV0iDDlEznLxy1RvmNIHCZX7-D9rE6NadYCVtbHE0GOQE4Gn5fZLSVVxdAZ8nPpYZ2e0Oj5HaMEpjgoTwfBpANs8H-3bGJSqeiq3QLoIbqHXhXAmNtDsAbwgbR0_iTGiqRvarjlfMGqS--sHf2VKfMkv1XNaT45tokgEwgMhjCBrA_sHwcMmJvwRVWb8ZyZ4s73KzjaKPFkyxtkHsifKkniZGe0HReq9_-UWBXkl3daS9eJ60Uy6maevHf1a0Ohkw-PKWbu5DzQy91kf3Uq-zrleo1vevx8WAXG1jsJd-uGR3PjvgS0oNYcQr1gE3LIv_w",
 
       "User-Agent": "PostmanRuntime/7.37.3",
       "Accept": "*/*",
@@ -26,7 +26,7 @@ class CropDeficiencyRequest {
         Map<String, dynamic> decoded = {};
         decoded = json.decode(response.body);
         //model
-        //PopularList popularList = PopularList.fromJson(decoded);
+
         Cropdeficiency cropdeficiency = Cropdeficiency.fromJson(decoded);
         onSuccess(cropdeficiency.npkdeficiency);
         print("statusCode ${response.statusCode}");

@@ -8,24 +8,19 @@ part 'npk_state.dart';
 
 class NpkCubit extends Cubit<NpkState> {
   NpkCubit() : super(NpkInitial());
-  static NpkCubit get(context)=>BlocProvider.of(context);
-  NpkModel npkModel=NpkModel();
-  getNpk({
-    required int id
-}){
-   // emit(NpkLoading());
-    NpkRequest.getNpk(id: id, onSuccess: (res){
-      npkModel=res;
-    },
 
+  static NpkCubit get(context) => BlocProvider.of(context);
+  NpkModel npkModel = NpkModel();
 
-
-        onError: (statusCode){
-      emit(NpkError());
+  getNpk({required int id}) {
+    // emit(NpkLoading());
+    NpkRequest.getNpk(
+        id: id,
+        onSuccess: (res) {
+          npkModel = res;
+        },
+        onError: (statusCode) {
+          emit(NpkError());
         });
-
-
-
-
   }
 }
