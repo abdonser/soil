@@ -4,6 +4,7 @@ import 'package:soil/presentation/screens/home.dart';
 import 'package:soil/presentation/screens/start_scan/result_scan.dart';
 
 import '../../../app/app_color.dart';
+import 'blu.dart';
 
 
 class FinalStartScan extends StatelessWidget {
@@ -66,7 +67,7 @@ class FinalStartScan extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (builder)=> ResultScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=> Bluetooth()));
                 },
                 child: Container(
                     width: 327,

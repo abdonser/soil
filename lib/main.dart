@@ -18,6 +18,8 @@ import 'package:soil/presentation/screens/layout_screen.dart';
 import 'package:soil/presentation/screens/on_broading/login_screen.dart';
 import 'package:soil/presentation/screens/on_broading/logo_screen.dart';
 import 'package:soil/presentation/screens/on_broading/sign_up.dart';
+import 'package:soil/presentation/screens/start_scan/blu.dart';
+import 'package:soil/presentation/screens/start_scan/final_start_scan.dart';
 import 'package:soil/presentation/screens/start_scan/report.dart';
 import 'package:soil/presentation/screens/start_scan/result_scan.dart';
 import 'package:soil/presentation/screens/train.dart';
@@ -64,7 +66,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:ChooseCrop(),
+      home:const LogoScreen(),
     );
   }
 }

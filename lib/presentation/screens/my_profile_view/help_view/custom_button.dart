@@ -5,7 +5,7 @@ class CustomButton extends StatelessWidget {
 
 
   final String text;
-  Function() onTap;
+  Function()? onTap;
    CustomButton({super.key, required this.text,  required this.onTap});
 
 

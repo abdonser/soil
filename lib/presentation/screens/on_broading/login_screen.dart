@@ -85,13 +85,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(20),
                     borderSide: const BorderSide(color: Color(0xffF5F5F5)),
                   ),
-                  hintText: "Enter your phone",
+                  hintText: "Enter your email",
                   hintStyle: const TextStyle(
                     color: Color(0xff787676),
                     fontSize: 14,
                   ),
                   prefixIcon: const Icon(
-                    Icons.phone_outlined,
+                    Icons.email,
                     color: Color(0xff787676),
                   ),
                   prefixIconColor: Colors.black54,
@@ -215,21 +215,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               password: passwordController.text,
                             );
 
-                          /*  if (LoginCubit.get(context).loginmodel.token != null) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (builder) => BottomNavBar()),
-                              );
-                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                content: Text('Login successful'),
-                                duration: Duration(seconds: 5),
-                              ));
-                            } else {
-                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                content: Text('Please enter the email and password correctly'),
-                                duration: Duration(seconds: 5),
-                              ));
-                            }*/
+
                           },
                           child: const Text(
                             'Log in',
