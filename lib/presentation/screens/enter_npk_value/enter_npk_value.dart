@@ -1,14 +1,59 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 import '../../../app/app_color.dart';
+import '../start_scan/report.dart';
 import 'LaboratoryReport.dart';
 
 class UploadValue extends StatelessWidget {
-   UploadValue({super.key});
-  TextEditingController nController=TextEditingController();
-  TextEditingController pController=TextEditingController();
-  TextEditingController kController=TextEditingController();
+  UploadValue({super.key});
+
+  final TextEditingController nController = TextEditingController();
+  final TextEditingController pController = TextEditingController();
+  final TextEditingController kController = TextEditingController();
+
+  Future<void> _submitData(BuildContext context) async {
+    final n = int.tryParse(nController.text);
+    final p = int.tryParse(pController.text);
+    final k = int.tryParse(kController.text);
+
+    if (n == null || p == null || k == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter valid NPK values')),
+      );
+      return;
+    }
+
+    try {
+      final response = await http.post(
+        Uri.parse('https://086b-196-150-43-129.ngrok-free.app/predict'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({'N': n, 'P': p, 'K': k}),
+      );
+
+      if (response.statusCode == 200) {
+        print(response.statusCode);
+        final predictions = json.decode(response.body)['predictions'];
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Report(predictions: predictions),
+          ),
+        );
+      } else {
+        print(response.statusCode);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Failed to get predictions')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: $e')),
+      );
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +69,7 @@ class UploadValue extends StatelessWidget {
           ),
         ),
         title: const Text(
-          "Enter NPK  value",
+          "Enter NPK value",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -34,10 +79,10 @@ class UploadValue extends StatelessWidget {
           Padding(
             padding:
                 const EdgeInsets.only(left: 40, right: 40, top: 40, bottom: 20),
-            child: Image.asset("assets/images/npk_value.jpg"),
+            child: Image.asset("assets/images/npk_value.jpg",fit: BoxFit.fill,height: 240,),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
             child: Text(
               "Enter NPK value",
               style: TextStyle(
@@ -50,7 +95,7 @@ class UploadValue extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          Center(
+          const Center(
             child: Text(
               "If you do not have our device and you perform an analysis \n "
               "in a laboratory you can enter NPK value here to tell you the\n "
@@ -61,13 +106,13 @@ class UploadValue extends StatelessWidget {
                   fontWeight: FontWeight.w400),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
+              const Padding(
+                padding: EdgeInsets.only(left: 8.0),
                 child: Text(
                   "N :",
                   style: TextStyle(
@@ -85,7 +130,7 @@ class UploadValue extends StatelessWidget {
                     controller: nController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        fillColor: Color(0xffF5F5F5),
+                        fillColor: const Color(0xffF5F5F5),
                         filled: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
@@ -93,7 +138,7 @@ class UploadValue extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 "P :",
                 style: TextStyle(
                     fontSize: 18,
@@ -109,7 +154,7 @@ class UploadValue extends StatelessWidget {
                     controller: pController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        fillColor: Color(0xffF5F5F5),
+                        fillColor: const Color(0xffF5F5F5),
                         filled: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
@@ -133,7 +178,7 @@ class UploadValue extends StatelessWidget {
                     controller: kController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        fillColor: Color(0xffF5F5F5),
+                        fillColor: const Color(0xffF5F5F5),
                         filled: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
@@ -143,7 +188,7 @@ class UploadValue extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Padding(
@@ -156,10 +201,7 @@ class UploadValue extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15)),
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (builder) => LaboratoryReport()));
+                    _submitData(context);
                   },
                   child: const Text(
                     "Go to report",
@@ -172,3 +214,4 @@ class UploadValue extends StatelessWidget {
     );
   }
 }
+
