@@ -110,6 +110,7 @@ class _BluetoothState extends State<Bluetooth> {
                 ),
               ),
             ),
+            Spacer(),
             Padding(
               padding: EdgeInsets.only(left: 10,right: 10),
               child: Container(

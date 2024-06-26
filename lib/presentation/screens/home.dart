@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soil/app/app_color.dart';
 import 'package:soil/app/app_images.dart';
 import 'package:soil/presentation/component/home_Card.dart';
@@ -20,7 +21,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Column(
+        title:   const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -42,17 +43,17 @@ class MyHomePage extends StatelessWidget {
             )
           ],
         ),
-        actions: const [
-          CircleAvatar(
+        actions:  [
+          const CircleAvatar(
             backgroundImage: AssetImage('assets/images/profile.png'),
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 10.w),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate:  const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 0.8,
               crossAxisSpacing: 15,

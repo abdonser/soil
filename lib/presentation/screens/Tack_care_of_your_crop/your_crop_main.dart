@@ -121,20 +121,20 @@ class _YourCropViewState extends State<YourCropView> {
                         ),
                         Column(
                           children: [
-                            const Row(
+                             const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 CustomButtonsRow(
-                                  text: 'Irrigation',
-                                  icon: FontAwesomeIcons.icons,
+                                  text: 'Irrigation', color: AppColor.secondColor, color2: Colors.brown,
+                                  //icon: FontAwesomeIcons.iceCream,
                                 ),
                                 CustomButtonsRow(
-                                  text: 'Fertilizer',
-                                  icon: FontAwesomeIcons.icons,
+                                  text: 'Fertilizer', color: AppColor.mainColor, color2: Colors.white,
+                                  //icon: FontAwesomeIcons.icons,
                                 ),
                                 CustomButtonsRow(
-                                  text: 'Length',
-                                  icon: FontAwesomeIcons.icons,
+                                  text: 'Length', color: AppColor.secondColor, color2: Colors.brown,
+                                 // icon: FontAwesomeIcons.icons,
                                 ),
                               ],
                             ),

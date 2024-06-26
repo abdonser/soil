@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeCard extends StatelessWidget {
   final String? image;
@@ -16,12 +17,12 @@ class HomeCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(image!),
-          const SizedBox(height: 8),
+           SizedBox(height: 8.h),
           Text(
             text!,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
-          const SizedBox(height: 8),
+           SizedBox(height: 8.h),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),

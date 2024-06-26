@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 
-import '../../../app/app_color.dart';
-
 class CustomButtonsRow extends StatelessWidget {
-  const CustomButtonsRow({
+  final String text;
+
+   final Color color;
+   final Color color2;
+   const CustomButtonsRow({
     super.key,
     required this.text,
-    required this.icon,
+   // required this.icon,
+    required this.color,
+     required this.color2,
+
   });
 
-  final String text;
-  final IconData icon;
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColor.mainColor,
+        border:Border(),
+        color: color,
         borderRadius: BorderRadius.circular(8),
       ),
       height: 80,
@@ -24,20 +29,20 @@ class CustomButtonsRow extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            color: Colors.white,
-            size: 30,
-          ),
+          // Icon(
+          //   icon,
+          //   color: Colors.white,
+          //   size: 30,
+          // ),
           const SizedBox(
             height: 8,
           ),
           Text(
             text,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
+            style:  TextStyle(
+              color: color2,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
             ),
           )
         ],

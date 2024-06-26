@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../app/app_color.dart';
 import 'connect_bletooth.dart';
@@ -12,7 +13,9 @@ class StartScan extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
         ),
         actions: const [
@@ -33,7 +36,13 @@ class StartScan extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset("assets/images/trunOnDevice.png"),
+            Padding(
+              padding:  EdgeInsets.only(top: 90.h),
+              child: Container(
+
+
+                  child: Image.asset("assets/images/trunOnDevice.png")),
+            ),
             const Text(
               "Turn on the device",
               style: TextStyle(
@@ -41,28 +50,31 @@ class StartScan extends StatelessWidget {
                 fontSize: 20
               ),
             ),
-            const SizedBox(
-              height: 10,
+             SizedBox(
+              height: 10.h,
             ),
             const Text(
-              "Please turn on the device by pressing the power button",
+              "Please turn on the device by pressing the power button",style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(
-              height: 24,
+             SizedBox(
+              height: 24.h,
             ),
-            Container(
-                width: 150,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: AppColor.mainColor),
-                child: IconButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder)=>const ConnectBluetooth()));
-                    },
-                    icon: const Icon(
-                      Icons.arrow_forward_outlined,
-                      color: Colors.white,
-                    )))
+            Padding(
+              padding:  EdgeInsets.only(top: 50.h,right: 146.w,left: 146),
+              child: Container(
+                  width: 150.w,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.r),
+                      color: AppColor.mainColor),
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>const ConnectBluetooth()));
+                      },
+                      icon: const Icon(
+                        Icons.arrow_forward_outlined,
+                        color: Colors.white,
+                      ))),
+            )
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soil/presentation/screens/home.dart';
 import 'package:soil/presentation/screens/start_scan/result_scan.dart';
 
@@ -46,8 +47,8 @@ class FinalStartScan extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset("assets/images/startScan2.png"),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
               const Text(
                 "Start scan",
@@ -56,30 +57,33 @@ class FinalStartScan extends StatelessWidget {
                   fontSize: 20
                 ),
               ),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
               const Center(
                   child: Text(
                       " you can start scan and see the report of NPK sensor")),
-              const SizedBox(
-                height: 24,
+               SizedBox(
+                height: 30.h,
               ),
               InkWell(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (builder)=> Bluetooth()));
                 },
-                child: Container(
-                    width: 327,
-                    height: 57,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: AppColor.mainColor),
-                    child: const Center(
-                        child: Text(
-                      "Start Scan",
-                      style: TextStyle(color: Colors.white),
-                    ))),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: Container(
+                      width: 327.w,
+                      height: 57.h,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r),
+                          color: AppColor.mainColor),
+                      child: const Center(
+                          child: Text(
+                        "Start Scan",
+                        style: TextStyle(color: Colors.white),
+                      ))),
+                ),
               )
             ],
           ),

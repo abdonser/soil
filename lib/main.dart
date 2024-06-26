@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soil/Data/cubit/cropDeficieny_Info/crop_deficieny_info_cubit.dart';
 
 import 'package:soil/Data/cubit/crop_list_cubit.dart';
@@ -22,33 +23,29 @@ import 'package:soil/presentation/screens/start_scan/blu.dart';
 import 'package:soil/presentation/screens/start_scan/final_start_scan.dart';
 import 'package:soil/presentation/screens/start_scan/report.dart';
 import 'package:soil/presentation/screens/start_scan/result_scan.dart';
+import 'package:soil/presentation/screens/start_scan/turn_on_the_device.dart';
 import 'package:soil/presentation/screens/train.dart';
 
 import 'Data/cubit/npk_cubit.dart';
 
-
-
 void main() {
-  runApp(MultiBlocProvider(
-      providers: [
-
-        BlocProvider<CropDeficienyInfoCubit>(
-          create: (BuildContext context) => CropDeficienyInfoCubit(),
-        ),
-        BlocProvider<LoginCubit>(
-          create: (BuildContext context) => LoginCubit(),
-        ),
-        BlocProvider<SignUpCubit>(
-          create: (BuildContext context) => SignUpCubit(),
-        ),
-        BlocProvider<CropListCubit>(
-          create: (BuildContext context) => CropListCubit(),
-        ),
-        BlocProvider<NpkCubit>(
-          create: (BuildContext context) => NpkCubit(),
-        ),
-
-      ], child: const MyApp()));
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider<CropDeficienyInfoCubit>(
+      create: (BuildContext context) => CropDeficienyInfoCubit(),
+    ),
+    BlocProvider<LoginCubit>(
+      create: (BuildContext context) => LoginCubit(),
+    ),
+    BlocProvider<SignUpCubit>(
+      create: (BuildContext context) => SignUpCubit(),
+    ),
+    BlocProvider<CropListCubit>(
+      create: (BuildContext context) => CropListCubit(),
+    ),
+    BlocProvider<NpkCubit>(
+      create: (BuildContext context) => NpkCubit(),
+    ),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -57,20 +54,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home:const LogoScreen(),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(373, 733),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (_, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+            ),
+            home: const SelectCrop(),
+          );
+        });
   }
 }
-
-
-
-
