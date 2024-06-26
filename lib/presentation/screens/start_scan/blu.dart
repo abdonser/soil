@@ -30,6 +30,7 @@ class _BluetoothState extends State<Bluetooth> {
     super.initState();
     connectToDevice(); // Call connect function here
   }
+  /////
 
 
   Future<void> _submitData(BuildContext context) async {
