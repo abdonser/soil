@@ -1,11 +1,20 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import '../../../app/app_color.dart';
+import '../crop_deficiency/select_crop.dart';
+import 'package:http/http.dart' as http;
+
+import '../enter_npk_value/report_man.dart';
+
 
 class Report extends StatelessWidget {
   final List predictions;
 
-  Report({required this.predictions});
+  const Report({super.key, required this.predictions});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -85,24 +94,6 @@ class Report extends StatelessWidget {
                 }).toList(),
               ),
             ),
-            const SizedBox(height: 25),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                width: 327,
-                height: 56,
-                decoration: BoxDecoration(
-                    color: AppColor.mainColor,
-                    borderRadius: BorderRadius.circular(15)),
-                child: MaterialButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Select crop",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                ),
-              ),
-            )
           ],
         ),
       ),

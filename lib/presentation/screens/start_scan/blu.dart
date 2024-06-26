@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'dart:io';
+import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
@@ -21,12 +23,58 @@ class _BluetoothState extends State<Bluetooth> {
   StringBuffer receivedDataBuffer = StringBuffer();
   String receivedData = ''; // Use StringBuffer
   List<String> sensorValues = [];
+  List<int> npkVal=[];
 
   @override
   void initState() {
     super.initState();
     connectToDevice(); // Call connect function here
   }
+
+
+  Future<void> _submitData(BuildContext context) async {
+    final n = npkVal[0];
+    final p = npkVal[1];
+    final k = npkVal[2];
+
+    if (n == null || p == null || k == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter valid NPK values')),
+      );
+      return;
+    }
+
+    try {
+      final response = await http.post(
+        Uri.parse('https://5dc0-196-150-21-249.ngrok-free.app/predict'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({'N': n, 'P': p, 'K': k}),
+      );
+
+      if (response.statusCode == 200) {
+        print(response.statusCode);
+        final predictions = json.decode(response.body)['predictions'];
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Report(
+                predictions: predictions),
+          ),
+        );
+      } else {
+        print(response.statusCode);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Failed to get predictions')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: $e')),
+      );
+      print(e.toString());
+    }
+  }
+
 
   Future<void> connectToDevice() async {
     var status = await Permission.bluetoothScan.request();
@@ -65,6 +113,15 @@ class _BluetoothState extends State<Bluetooth> {
       List<String> parts = message.split(' ');
       sensorValues.add(parts[1]);
     }
+  }
+  void lastThreeVal(){
+    int lastOne = sensorValues.length-1;
+    int lastTwo = sensorValues.length-2;
+    int lastThree = sensorValues.length-3;
+
+    npkVal=[int.parse(sensorValues[lastThree]),int.parse(sensorValues[lastThree]),int.parse(sensorValues[lastThree])];
+
+
   }
 
   @override
@@ -124,8 +181,9 @@ class _BluetoothState extends State<Bluetooth> {
                   minWidth: MediaQuery.of(context).size.width,
                   onPressed: () {
                     closeConnection();
-                    print(sensorValues);
-                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>Report()));
+                    lastThreeVal();
+                    _submitData(context);
+
                   },
                   color: AppColor.mainColor,
                   child: const Text(
