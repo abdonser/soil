@@ -55,7 +55,7 @@ class ConnectBluetooth extends StatelessWidget {
               ),
               const Center(
                 child: Text(
-                  "Please connect bluetooth to  connect it to device and\n                                 start scan ",
+                  "Please connect bluetooth to  connect it to\n                  device and start scan ",
                   style: TextStyle(fontSize: 16),
                 ),
               ),

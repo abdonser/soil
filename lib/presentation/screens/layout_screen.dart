@@ -24,7 +24,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List Screens = [
     const MyHomePage(),
     const Notifications(),
-    const Chat(),
+
     const MyProfile()
   ];
   int _selectedIndex = 0;
@@ -43,7 +43,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             color: Colors.white,
           ),
           Icon(Icons.notifications_outlined, size: 30, color: Colors.white),
-          Icon(Icons.chat_outlined, size: 30, color: Colors.white),
+
           Icon(Icons.person_outline, size: 30, color: Colors.white),
         ],
         

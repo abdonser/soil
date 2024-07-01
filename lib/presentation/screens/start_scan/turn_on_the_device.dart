@@ -54,7 +54,7 @@ class StartScan extends StatelessWidget {
               height: 10.h,
             ),
             const Text(
-              "Please turn on the device by pressing the power button",style: TextStyle(fontSize: 16),
+              "Please turn on the device by pressing the power\n                                 button",style: TextStyle(fontSize: 16),
             ),
              SizedBox(
               height: 24.h,

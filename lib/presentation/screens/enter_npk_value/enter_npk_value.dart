@@ -27,7 +27,7 @@ class UploadValue extends StatelessWidget {
 
     try {
       final response = await http.post(
-        Uri.parse('https://086b-196-150-43-129.ngrok-free.app/predict'),
+        Uri.parse('https://7936-2c0f-fc88-41-4382-cdf2-bd35-3ed5-cc49.ngrok-free.app/predict'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({'N': n, 'P': p, 'K': k}),
       );
@@ -78,7 +78,7 @@ class UploadValue extends StatelessWidget {
         children: [
           Padding(
             padding:
-                const EdgeInsets.only(left: 40, right: 40, top: 40, bottom: 20),
+                const EdgeInsets.only(left: 40, right: 40, top: 100, bottom: 20),
             child: Image.asset("assets/images/npk_value.jpg",fit: BoxFit.fill,height: 240,),
           ),
           const Padding(

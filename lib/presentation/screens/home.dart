@@ -57,7 +57,7 @@ class MyHomePage extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 0.8,
               crossAxisSpacing: 15,
-              mainAxisSpacing: 15,
+              mainAxisSpacing: 10,
             ),
             children: [
               HomeCard(
@@ -67,7 +67,7 @@ class MyHomePage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (builder) => BuyDevice()));
-                  }),
+                  }, height: 8,),
               HomeCard(
                   image: "assets/images/startScan.png",
                   text: "start scan",
@@ -75,7 +75,7 @@ class MyHomePage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (builder) => StartScan()));
-                  }),
+                  }, height: 8,),
               HomeCard(
                   image: "assets/images/npk_value_card.jpg",
                   text: " Enter npk\n    value  ",
@@ -85,21 +85,21 @@ class MyHomePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (builder) => UploadValue()));
-                  }),
+                  }, height: 0,),
               HomeCard(
                   image: "assets/images/npk.png",
-                  text: "Tack care of\n your crop",
+                  text: "Take care of\n your crop",
                   color: AppColor.mainColor,
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (builder)=>SelectCrop()));
-                  }),
+                  }, height: 3,),
               HomeCard(
                   image: "assets/images/quantityCrop.png",
                   text: "Quantity crop\n  expected ",
                   color: AppColor.mainColor,
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (builder)=>ChooseCrop()));
-                  }),
+                  }, height: 0,),
               HomeCard(
                   image: "assets/images/npk.png",
                   text: "NPK deficiency\n      in crops",
@@ -109,7 +109,7 @@ class MyHomePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (builder) => SelectCropQuantity()));
-                  }),
+                  }, height: 0,),
             ]),
       ),
     );

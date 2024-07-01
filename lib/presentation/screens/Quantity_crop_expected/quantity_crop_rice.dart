@@ -279,7 +279,7 @@ class _RiceQuantityState extends State<RiceQuantity> {
           ),
           Padding(
             padding: const EdgeInsets.only(
-                left: 25, right: 150, bottom: 10, top: 10),
+                left: 25, right: 25, bottom: 10, top: 10),
             child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),

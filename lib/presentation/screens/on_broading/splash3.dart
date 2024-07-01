@@ -21,7 +21,7 @@ class _Splash3ScreenState extends State<Splash3Screen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20, top: 60, right: 10),
+              padding: const EdgeInsets.only(left: 20, top: 90, right: 20),
               child: Image.asset(
                 "assets/images/splash3.png",
                 scale: 4,
@@ -42,7 +42,7 @@ class _Splash3ScreenState extends State<Splash3Screen> {
                 title: "    The application will show you a report on the \n"
                     "  percentages of N,P and k ,the crops that you can \n"
                     "grow based on these percentages, and the fertilizers \n"
-                    "               that you will use to grow this crop."),
+                    "               that you will use to grow this crop.",),
             SizedBox(
               height: 40,
             ),

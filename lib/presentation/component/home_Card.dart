@@ -7,8 +7,9 @@ class HomeCard extends StatelessWidget {
   final String? text;
   final Color? color;
   final Function()? onTap;
+  double height;
 
-  HomeCard({Key? key, required this.image, required this.text, required this.color, required this.onTap});
+  HomeCard({super.key,  required this.image, required this.text, required this.color, required this.onTap,required this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +21,9 @@ class HomeCard extends StatelessWidget {
            SizedBox(height: 8.h),
           Text(
             text!,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
           ),
-           SizedBox(height: 8.h),
+           SizedBox(height:height),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),

@@ -183,7 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child:BlocConsumer<LoginCubit, LoginState>(
                     listener: (context, state) {
                       if (state is LoginDone) {
-                        Navigator.push(context, MaterialPageRoute(builder: (builder) => BottomNavBar()));
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder)=>BottomNavBar()), (route) => false);
                         String?token=LoginCubit().loginmodel.token;
                         CacheService().setUserToken(token:"$token");
                         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

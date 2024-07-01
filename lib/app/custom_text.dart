@@ -7,7 +7,7 @@ class CustomText extends StatelessWidget {
   final FontWeight fontWeight ;
   final double fontSize;
   const CustomText({super.key,required this.title,this.color=Colors.black
-    ,this.fontWeight=FontWeight.w400,this.fontSize=12});
+    ,this.fontWeight=FontWeight.bold,this.fontSize=13});
 
   @override
   Widget build(BuildContext context) {

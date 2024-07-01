@@ -7,6 +7,7 @@ import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:soil/app/app_color.dart';
 import 'package:soil/presentation/screens/start_scan/report.dart';
+import 'package:soil/presentation/screens/start_scan/report_2.dart';
 
 import '../my_profile_view/help_view/custom_button.dart';
 
@@ -19,7 +20,7 @@ class Bluetooth extends StatefulWidget {
 
 class _BluetoothState extends State<Bluetooth> {
   BluetoothConnection? connection;
-  String address = '00:22:06:01:99:8C';
+  String address = '00:18:E4:35:15:9D';
   StringBuffer receivedDataBuffer = StringBuffer();
   String receivedData = ''; // Use StringBuffer
   List<String> sensorValues = [];
@@ -155,7 +156,7 @@ class _BluetoothState extends State<Bluetooth> {
                     children: [
                       Card(
                         margin: const EdgeInsets.symmetric(vertical: 8.0),
-                       color: Colors.grey[100],
+                        color: Colors.grey[100],
                         child: Center(
                           child: Text(
                             receivedData,
@@ -182,13 +183,15 @@ class _BluetoothState extends State<Bluetooth> {
                   minWidth: MediaQuery.of(context).size.width,
                   onPressed: () {
                     closeConnection();
-                    lastThreeVal();
-                    _submitData(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>Repoort()));
+
+                    // lastThreeVal();
+                    // _submitData(context);
 
                   },
                   color: AppColor.mainColor,
                   child: const Text(
-                   " Go to report",
+                    " Go to report",
                     style:  TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
                   ),

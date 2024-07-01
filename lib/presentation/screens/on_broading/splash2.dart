@@ -38,7 +38,7 @@ class _Splash2ScreenState extends State<Splash2Screen> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 50, left: 20, right: 10),
+        padding: const EdgeInsets.only(top: 90, left: 20, right: 20),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
